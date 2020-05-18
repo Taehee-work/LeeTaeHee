@@ -10,7 +10,7 @@
 	Hello world! - h1  
 </h1>
 <h2>
-	Hello world! - h2
+	두둥등장 - h2
 </h2>
 <h3>
 	두둥등장! - h3
