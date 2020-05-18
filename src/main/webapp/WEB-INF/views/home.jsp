@@ -7,13 +7,13 @@
 </head>
 <body>
 <h1>
-	Hello world!  
+	Hello world! - h1  
 </h1>
 <h2>
-	두둥등장!
+	Hello world! - h2
 </h2>
 <h3>
-	한타하면 현타!
+	두둥등장! - h3
 </h3>
 
 <P>  The time on the server is ${serverTime}. </P>
