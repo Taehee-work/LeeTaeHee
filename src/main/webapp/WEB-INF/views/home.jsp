@@ -9,6 +9,12 @@
 <h1>
 	Hello world!  
 </h1>
+<h2>
+	두둥등장!
+</h2>
+<h3>
+	한타하면 현타!
+</h3>
 
 <P>  The time on the server is ${serverTime}. </P>
 </body>
