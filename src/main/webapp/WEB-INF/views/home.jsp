@@ -1,4 +1,4 @@
-<%@ page contentType="text/html; charset=utf-8" %>
+<%@ page contentType = "text/html; charset=utf-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page session="false" %>
 <html>
@@ -9,21 +9,6 @@
 <h1>
 	Hello world! - h1  
 </h1>
-<h2>
-	두둥등장 - h2
-</h2>
-<h3>
-	두둥등장! - h3
-</h3>
-<h4>
-	 두둥등장! - h4
-</h4>
-<h5>
-	두둥등장! - h5
-</h5>
-<h6>
-	두둥등장! - h6
-</h6>
 <P>  The time on the server is ${serverTime}. </P>
 </body>
 </html>
