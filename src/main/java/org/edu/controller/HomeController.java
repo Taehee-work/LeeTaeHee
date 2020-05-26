@@ -42,7 +42,19 @@ public class HomeController {
 	 *  @param model
 	 *  @return
 	 **/
+	/* we are 페이지 파일 입니다. */
+	@RequestMapping(value = "/weare", method = RequestMethod.GET)
+	public String weare(Locale locale, Model model) {
+
+		return "weare";
+	}
 	
+	/* work 페이지 파일 입니다. */
+	@RequestMapping(value = "/work", method = RequestMethod.GET)
+	public String work(Locale locale, Model model) {
+
+		return "work";
+	}
 	@RequestMapping(value = "/htmltest", method = RequestMethod.GET)
 	public String htmltest(Locale locale, Model model) {
 
