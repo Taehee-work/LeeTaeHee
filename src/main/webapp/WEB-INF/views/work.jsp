@@ -91,6 +91,28 @@
 	max-width: 100%;
 	height: auto;
 }
+/*태블릿용 CSS */
+@media all and (min-width:768px){
+/* 태블릿 WORK 영역 CSS */
+	.work-section{
+		margin-top:118px;
+	}
+	.work-section .sec-tit{
+		margin-bottom:76px;
+	}
+	.work-section .work-list li{
+		float:left;
+		width:50%;
+	}
+	.work-section .work-list li .info{
+		letf:37px;
+	}
+	.work-section .work-list li a:hover .info{
+		transform:translateY(37px);
+	}
+	
+}
+
 </style>
 <script src="/resources/js/jquery.min.js"></script>
 <script src="/resources/js/common.js"></script>
@@ -124,49 +146,49 @@
 		<section class="work-section cfixed">
 			<h2 class="sec-tit">WORK</h2>
 			<ul class="work-list">
-				<li><a href="#">
+				<li><a href="#" onclick="return false" onclick="return false" onclick="return false">
 						<div class="info">
 							<h3>작업01</h3>
 							<span>소스/작업01</span>
 						</div> <img src="/resources/images/Peng_03.jpg" alt="">
 				</a></li>
-				<li><a href="#">
+				<li><a href="#" onclick="return false" onclick="return false">
 						<div class="info">
 							<h3>작업02</h3>
 							<span>소스/작업02</span>
 						</div> <img src="/resources/images/Peng_03.jpg" alt="">
 				</a></li>
-				<li><a href="#">
+				<li><a href="#" onclick="return false">
 						<div class="info">
 							<h3>작업03</h3>
 							<span>소스/작업03</span>
 						</div> <img src="/resources/images/Peng_03.jpg" alt="">
 				</a></li>
-				<li><a href="#">
+				<li><a href="#" onclick="return false">
 						<div class="info">
 							<h3>작업04</h3>
 							<span>소스/작업04</span>
 						</div> <img src="/resources/images/Peng_03.jpg" alt="">
 				</a></li>
-				<li><a href="#">
+				<li><a href="#" onclick="return false">
 						<div class="info">
 							<h3>작업05</h3>
 							<span>소스/작업05</span>
 						</div> <img src="/resources/images/Peng_03.jpg" alt="">
 				</a></li>
-				<li><a href="#">
+				<li><a href="#" onclick="return false">
 						<div class="info">
 							<h3>작업06</h3>
 							<span>소스/작업06</span>
 						</div> <img src="/resources/images/Peng_03.jpg" alt="">
 				</a></li>
-				<li><a href="#">
+				<li><a href="#" onclick="return false">
 						<div class="info">
 							<h3>작업07</h3>
 							<span>소스/작업07</span>
 						</div> <img src="/resources/images/Peng_03.jpg" alt="">
 				</a></li>
-				<li><a href="#">
+				<li><a href="#" onclick="return false">
 						<div class="info">
 							<h3>작업08</h3>
 							<span>소스/작업08</span>
