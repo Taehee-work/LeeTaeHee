@@ -46,7 +46,7 @@
 }
 
 .promotion-section .promo-list li img {
-	height: 52px;
+	height: 250px;
 }
 
 .promotion-section .promo-list li h3 {
@@ -64,27 +64,30 @@
 /* 태블릿 WE ARE 영역 CSS */
 @media all and (min-width:768px) {
 	.display-section {
-		margin-top: 95px;
+		margin-top:95px;
 	}
 	/* 태블릿 WE ARE 내용 영역 CSS */
 	.promotion-section {
-		margin-top: 110px;
+		margin-top:110px;
 	}
 	.promotion-section .promo-list li {
-		float: left;
-		width: 23.046875%;
+		float:left;
+		width:23.046875%;
 		/* 177px ÷ 768px*/
-		margin-left: 2.604166666666667%;
+		margin-left:2.604166666666667%;
 		/* 20px ÷ 768px*/
-		margin-top: 0;
+		margin-top:0;
 	}
 	/* [가변그리드공식] = 결과는 % 단위 입니다.
   [가변element값 %] = (가변크기로 만들 박스의 가로 너비 / 가변그키로 만들 박스를 감싸고 있는 박스의 가로 너비) X 100 
   [가변마진값 %] = (가변 마진을 적용할 마진값 / 적용할 박스를 감싸고 있는 박스의 가로 너비) X 100
   [가변패딩값 %] = (가변 패딩을 적용할 패딩값 / 적용할 박스를 감싸고 있는 박스의 가로 너비) X 100
   */
+  .promotion-section .promo-list li img {
+	height: 160px;
+}
 	.promotion-section .promo-list li:first-child {
-		margin-left: 0;
+		margin-left:0;
 	}
 }
 </style>
