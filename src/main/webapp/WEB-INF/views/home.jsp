@@ -16,7 +16,17 @@
 <link rel="stylesheet" type="text/css" href="/resources/css/common.css">
 <link rel="stylesheet" type="text/css" href="/resources/css/user.css">
 <style>
-
+	.go_top{
+		position:fixed;
+		right:20px;
+		bottom:112px;
+		text-align:center;
+		background:#00ffff;
+		z-index:100;
+		padding:20px;
+		opacity:0.5;
+		color:#000000;
+	}
 </style>
 <script src= "/resources/js/jquery.min.js"></script>
 <script src= "/resources/js/common.js"></script>
@@ -36,10 +46,10 @@
 			<nav>
 				<ul class="gnb">
 					<li><a href="/">HOME</a></li>
-					<li><a href="/weare">WE ARE</a></li>
-					<li><a href="/work">WORK</a></li>
-					<li><a href="/blog">BLOG</a></li>
-					<li><a href="/contactus">CONTACT US</a></li>
+					<li><a href="#weare">WE ARE</a></li>
+					<li><a href="#work">WORK</a></li>
+					<li><a href="#blog">BLOG</a></li>
+					<li><a href="#contactus">CONTACT US</a></li>
 				</ul>
 			</nav>
 			<span class="menu-toggle-btn"> <span></span> <span></span> <span></span>
@@ -51,7 +61,7 @@
 				<section class="content">
 			<section class="display-section">
 				<div class="container">
-					<h2 class="sec-tit">WE ARE</h2>
+					<h2 class="sec-tit" id="weare">WE ARE</h2>
 					<p class="desc">
 						"휴먼 교육센터 디지털 컨버전스 과정입니다." <br> "그리고 지금은 화면설계 시간입니다."
 					</p>
@@ -86,7 +96,7 @@
 			</div>
 		</section>
 				<section class="work-section cfixed">
-			<h2 class="sec-tit">WORK</h2>
+			<h2 class="sec-tit" id="work">WORK</h2>
 			<ul class="work-list">
 				<li><a href="#" onclick="return false" onclick="return false" onclick="return false">
 						<div class="info">
@@ -140,7 +150,7 @@
 		</section>
 				<section class="blog-section">
 			<div class="container">
-				<h2 class="sec-tit">BLOG</h2>
+				<h2 class="sec-tit" id="blog">BLOG</h2>
 				<ul class="blog-list">
 					<li><a href="#"><img src="/resources/images/Peng_03.jpg" alt=""></a>
 						<time datetime="2016-10-30">OCT 30, 2016</time> <a href=""><h3>타임스페이스는
@@ -156,7 +166,7 @@
 		</section>
 				<section class="contact-section">
 			<div class="container">
-				<h2 class="sec-tit">CONTACT</h2>
+				<h2 class="sec-tit" id="contactus">CONTACT</h2>
 				<div class="form-box">
 					<form action="" method="">
 						<fieldset class="cfixed">
@@ -187,5 +197,6 @@
 			<p class="copyright">LOGO</p>
 		</footer>
 	</div>
+		<a href="/" class="s_point"><p class="go_top">TOP</p></a>
 </body>
 </html>

@@ -42,6 +42,12 @@ public class HomeController {
 	 *  @param model
 	 *  @return
 	 **/
+	/* slide 페이지 파일 입니다. */
+	@RequestMapping(value = "/slide", method = RequestMethod.GET)
+	public String slide(Locale locale, Model model) {
+
+		return "slide";
+	}
 	/* we are 페이지 파일 입니다. */
 	@RequestMapping(value = "/weare", method = RequestMethod.GET)
 	public String weare(Locale locale, Model model) {
