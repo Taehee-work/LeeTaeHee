@@ -27,13 +27,17 @@
 		opacity:0.5;
 		color:#000000;
 	}
+	@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+	body, h1, h2, h3, h4, h5, h6, li, p{ font-family:"Nanum Gothic","NanumGothic" !important ;}
+	/* .logo {height:50px !important;} */
+	/* .logo img {height:50px !important;} */
 </style>
 <script src= "/resources/js/jquery.min.js"></script>
 <script src= "/resources/js/common.js"></script>
 <!-- 사용자 스크립트 -->
 <!-- jQuery(function($){ //j쿼리 시작 : $(document).ready(function(){ }); == $(function(){ }); 과 동일 -->
 
-<script>	
+<script>
 </script>
 </head>
 <body>
@@ -41,7 +45,7 @@
 	<div id="wrap">
 		<header class="header cfixed">
 			<h1 class="logo">
-				<a href="">LOGO</a>
+				<a href=""><img src="/resources/images/logo_02.png"alt=""></a>
 			</h1>
 			<nav>
 				<ul class="gnb">

@@ -300,7 +300,7 @@ img, iframe {
 	}
 	section.banner_slider{dixplay:none;}
 	body section#contents{margin-top:90px;}
-		/* nav > ul {diplay:none;} */
+	/* nav > ul {diplay:none;} */
 	body header {z-index:999;}
 	body header .hamberger {float:right;}
 	body header a#pull {
@@ -314,7 +314,8 @@ img, iframe {
         height: 30px;
         position: absolute;
         right: 0px;
-     }
+    }
+    nav > ul{display:none;} 
 	body header .row #gnb {
 		position:static;
 	}
@@ -352,12 +353,41 @@ img, iframe {
 	}
 }
 .nivo-caption{text-align:center !important;}
+.nivoSlider {height:400px !important;}
+.nivoSlider img {height:400px !important;}
 </style>
 <script src="/resources/js/jquery.min.js"></script>
 <script type="text/javascript">
 	jQuery(function($) { //j쿼리 시작 : $(document).ready(function(){ }); == $(function(){ }); 과 동일
-		}
-	);
+	//모바일 메뉴		
+		var pull=$('#pull');
+			menu=$('nav>ul');
+			$(pull).on('click',function(e){
+				var w=$(window).width();
+				if(w<960){
+					if(menu.is(':visible')){
+						//alert('닫을때');
+						menu.slideToggle("slow");
+						return;
+					}
+					if(menu.is(':hidden')){
+						//alert('열때');
+						menu.slideToggle("fast");
+						return;
+					}
+				}
+				
+			});//event end
+			//모바일 토글에 대한 스타일 -> PC에서는 없앤다.
+			$(window).resize(function(){
+				var w=$(window).width();
+				var menu=$('nav >ul');
+				if(w>960){
+					menu.removeAttr('style');
+				}else{}
+					return;
+			});
+	});
 </script>
 </head>
 <body>
@@ -383,9 +413,32 @@ img, iframe {
 		</div>
 	</header>
 	<!-- e:header-->
+	<script src="/resources/js/jquery.nivo.slider.js"></script>
+	<link href="/resources/css/nivo-slider.css" media="screen" rel="stylesheet" type="text/css">
+	<script type="text/javascript">
+		jQuery(function($){
+			$('#slider').nivoSlider({
+				effect:'slideInLeft',
+				directionNav: true,
+				controlNav: false,
+				pauseOnHover:false,
+				prevText:'<span style="font-size:30px;color:#fff;padding-left:10px;">&lt;</span>',
+				nextText:'<span style="font-size:30px;color:#fff;padding-right:10px;">&gt;</span>'
+			});
+			$('.nivo-prevNav').on('mouseover',function(){
+				$('#slider img').attr("data-transition","slideInRight");
+			});
+			$('.nivo-nextNav').on('mouseover',function(){
+				$('#slider img').attr("data-transition","slideInLeft");
+			});
+		});
+	</script>
 	<section class="banner_slider">
 		<div id="slider" class="nivoSlider">
 			<img src="/resources/images/egypt.jpg" title="슬라이드1" />
+			<img src="/resources/images/egypt_02.jpg" title="슬라이드2" />
+			<img src="/resources/images/egypt_03.jpg" title="슬라이드3" />
+			<img src="/resources/images/egypt_04.jpg" title="슬라이드4" />
 		</div>
 	</section>
 	<section id="contents" class="row">
