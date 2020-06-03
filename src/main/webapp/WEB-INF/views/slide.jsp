@@ -121,272 +121,328 @@ img, iframe {
 		padding-right: 20px;
 	}
 }
-.clearfix:after{
-	content:"";
-	display:block;
-	clear:both;
+
+.clearfix:after {
+	content: "";
+	display: block;
+	clear: both;
 }
-.blind{
-	visibility:hidden;
-	position:absolute;
-	top:-10000px;
-	height:1px;
-	width:1px;
+
+.blind {
+	visibility: hidden;
+	position: absolute;
+	top: -10000px;
+	height: 1px;
+	width: 1px;
 }
 </style>
 <style>
 @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
-	body, h1, h2, h3, h4, h5, h6, li, p { font-family:"Nanum Gothic","NanumGothic" !important ; font-size:14px;line-height:24px; }
-	body { margin:0px; padding:0px; }
-	/* 속성설명
+
+body, h1, h2, h3, h4, h5, h6, li, p {
+	font-family: "Nanum Gothic", "NanumGothic" !important;
+	font-size: 14px;
+	line-height: 24px;
+}
+
+body {
+	margin: 0px;
+	padding: 0px;
+}
+/* 속성설명
 	-webkit- : 구글, 사파리 브라우저에 적용
 	-moz- : 파이어폭스 브라우저에 적용
 	-ms- : 익스플로러에 적용, 보통 생략합니다.
     -o- : 오페라 브라우저에 적용
     */
-    body header{
-    	background:url(/resources/images/header-bg.jpg) no-repeat 50% 55%;
-    	-webkit-background-size:cover;
-    	-moz-background-size:cover;
-    	background-size:cover;
-    	position:fixed;
-    	width:100%;
-    	top:0px;
-    	height:90px;
-    	z-index:999;
-    }
-    body > section {
-      margin-top:90px; 
-    }
-    body ul, body ol {
-      padding: 0;
-      list-style: none;
-    }
-    body header .row #gnb, body header .row {
-      position: relative;
-      margin: 0 auto;
-    }
-    body header .row #brand{
-    background:url(/resources/images/logo_02.png) no-repeat 50% 50%;
-    height:90px;
-    width:90px;
-    margin:0px;
-    text-indent: -10000px;
-    }
-    
-    body header .row #brand:hover{
-    	background-color: rgba(0,0,0,0.1);
-    }
-    body header .row #brand:hover:before{
-    	top:35px;
-    	-webkit-transform: rotate(360deg);
-    	-mox-transform: rotate(360deg);
-    	-ms-transform: rotate(360deg);
-    	transform: rotate(360deg);
-    }
-    body header .row #gnb{
-    	position:absolute;
-    	top:35px;
-    	right:0;
-    }
-    body header .row #gnb ul{
-    	margin:0;
-    }
-    body header .row #gnb ul li{
-    	float:left;
-    	margin-right:30px;
-    }
-    body header .row #gnb ul li:last-child{/* 오른쪽 마진 값을 제거하지 않으면 float drop 현상이 발생 */
-		margin-right:0;
-    }
-    body header .row #gnb ul li a{
-    	font-size:16px;
-    	color:#fff;
-    	text-decoration:none;
-    	text-shadow:0 2px #282020;
-    }
-    body header .row #gnb ul li a:hover, 
-    body header .row #gnb ul li a:focus{
-    	color:#fff;
-    	text-shadow:none;
-    	font-weight:bold;
-    }
-	body section#contents h2, body section#contents h3{
-		position:relative;
-		margin-bottom:40px;
-		border-bottom:1px solid #e1dcda;
-		padding-bottom:20px;
-		font-size: 24px;
-		line-height:34px;
-		color:#21759a;
-		padding:20px;
+body header {
+	background: url(/resources/images/header-bg.jpg) no-repeat 50% 55%;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	background-size: cover;
+	position: fixed;
+	width: 100%;
+	top: 0px;
+	height: 90px;
+	z-index: 999;
+}
+
+body>section {
+	margin-top: 90px;
+}
+
+body ul, body ol {
+	padding: 0;
+	list-style: none;
+}
+
+body header .row #gnb, body header .row {
+	position: relative;
+	margin: 0 auto;
+}
+
+body header .row #brand {
+	background: url(/resources/images/logo_02.png) no-repeat 50% 50%;
+	height: 90px;
+	width: 90px;
+	margin: 0px;
+	text-indent: -10000px;
+}
+
+body header .row #brand:hover {
+	background-color: rgba(0, 0, 0, 0.1);
+}
+
+body header .row #brand:hover:before {
+	top: 35px;
+	-webkit-transform: rotate(360deg);
+	-mox-transform: rotate(360deg);
+	-ms-transform: rotate(360deg);
+	transform: rotate(360deg);
+}
+
+body header .row #gnb {
+	position: absolute;
+	top: 35px;
+	right: 0;
+}
+
+body header .row #gnb ul {
+	margin: 0;
+}
+
+body header .row #gnb ul li {
+	float: left;
+	margin-right: 30px;
+}
+
+body header .row #gnb ul li:last-child {
+	/* 오른쪽 마진 값을 제거하지 않으면 float drop 현상이 발생 */
+	margin-right: 0;
+}
+
+body header .row #gnb ul li a {
+	font-size: 16px;
+	color: #fff;
+	text-decoration: none;
+	text-shadow: 0 2px #282020;
+}
+
+body header .row #gnb ul li a:hover, body header .row #gnb ul li a:focus
+	{
+	color: #fff;
+	text-shadow: none;
+	font-weight: bold;
+}
+
+body section#contents h2, body section#contents h3 {
+	position: relative;
+	margin-bottom: 40px;
+	border-bottom: 1px solid #e1dcda;
+	padding-bottom: 20px;
+	font-size: 24px;
+	line-height: 34px;
+	color: #21759a;
+	padding: 20px;
+}
+
+body section#contents h2:before, body section#contents h3:before {
+	content: '';
+	position: absolute;
+	width: 50px;
+	height: 1px;
+	background: #21759a;
+	top: -10px;
+	left: -36px;
+	-webkit-transform: rotate(45deg);
+	-moz-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	transform: rotate(45deg);
+}
+
+body section#contents li {
+	margin-bottom: 60px;
+}
+
+body section#contents li img {
+	border: 1px solid blue;
+	-webcit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+body section#contents li h4, body section#contents li h5 {
+	font-size: 22px;
+}
+
+body section#contents li h5 {
+	margin-top: 22px;
+	margin-bottom: 32px;
+}
+
+body section#contents li p {
+	font-size: 14px;
+	line-height: 24px;
+	color: #818181;
+}
+
+body footer {
+	border-top: 1px solid #e2e2e2;
+	padding-top: 20px;
+}
+
+body footer p {
+	padding-top: 60px;
+	padiing-bottom: 60px;
+	background: url(/resources/images/logo_02.png) no-repeat 100% 50%;
+}
+
+body footer p small {
+	color: block;
+	line-height: 1.2;
+}
+
+body footer p small a:link, body footer p small a:visited {
+	color: #606060;
+	line-height: none;
+}
+
+body footer p small a:hover, body p small a:active {
+	color: #212121;
+}
+
+::section {
+	background-color: #eee7dd;
+	color: #542e1c;
+}
+
+::-moz-section {
+	background-color: #eee7dd;
+	color: #542e1c;
+}
+
+@media all and (max-width:960px) {
+	body section#contents li, .row .col-1, .row .col-2, .row .col-3, .row .col-4,
+		.row .col-5, .row .col-6, .row .col-7, .row .col-8, .row .col-9, .row .col-10,
+		.row .col-11, .row .col-12 {
+		text-align: center;
 	}
-	body section#contents h2:before, 
-	body section#contents h3:before{
-		content:'';
-		position:absolute;
-		width:50px;
-		height:1px;
-		background:#21759a;
-		top:-10px;
-		left:-36px;
-		-webkit-transform:rotate(45deg);
-		-moz-transform:rotate(45deg);
-		-ms-transform:rotate(45deg);
-		transform:rotate(45deg);
+	body header, body section#contents, body footer {
+		width: 100%;
+		padding-left: 0%;
+		padding-right: 0%;
 	}
-	body section#contents li{
-		margin-bottom:60px;
+	section.banner_slider {
+		dixplay: none;
 	}
-	body section#contents li img{
-		border:1px solid blue;
-		-webcit-box-sizing:border-box;
-		-moz-box-sizing:border-box;
-		box-sizing:border-box;
+	body section#contents {
+		margin-top: 90px;
 	}
-	body section#contents li h4, 
-	body section#contents li h5{
-		font-size:22px;
-	}
-	body section#contents li h5{
-		margin-top:22px;
-		margin-bottom:32px;
-	}
-	body section#contents li p{
-		font-size:14px;
-		line-height:24px;
-		color:#818181;
-	}
-	body footer{
-		border-top:1px solid #e2e2e2;
-		padding-top:20px;
-	}
-	body footer p{
-		padding-top:60px;
-		padiing-bottom:60px;
-		background:url(/resources/images/logo_02.png) no-repeat 100% 50%;
-	}
-	body footer p small{
-		color:block;
-		line-height:1.2;
-	}
-	body footer p small a:link, 
-	body footer p small a:visited{
-		color:#606060;
-		line-height:none;
-	}
-	body footer p small a:hover, 
-	body p small a:active{
-		color:#212121;
-	}
-	::section{
-		background-color:#eee7dd;
-		color:#542e1c;
-	}
-	::-moz-section{
-		background-color:#eee7dd;
-		color:#542e1c;
-	}
-@media all and (max-width:960px){
-	body section#contents li,
-		.row .col-1,.row .col-2,.row .col-3,.row .col-4,.row .col-5,.row .col-6,
-		.row .col-7,.row .col-8,.row .col-9,.row .col-10,.row .col-11,.row .col-12{
-			text-align:center;
-	}
-	body header, body section#contents, body footer{
-		width:100%;
-		padding-left:0%;
-		padding-right:0%;
-	}
-	section.banner_slider{dixplay:none;}
-	body section#contents{margin-top:90px;}
 	/* nav > ul {diplay:none;} */
-	body header {z-index:999;}
-	body header .hamberger {float:right;}
+	body header {
+		z-index: 999;
+	}
+	body header .hamberger {
+		float: right;
+	}
 	body header a#pull {
-		position:relative;
-		top:-55px;
+		position: relative;
+		top: -55px;
 	}
 	body header a#pull:after {
-    	content:"";
-        background: url('/resources/images/nav-icon.png') no-repeat;
-        width: 30px;
-        height: 30px;
-        position: absolute;
-        right: 0px;
-    }
-    nav > ul{display:none;} 
+		content: "";
+		background: url('/resources/images/nav-icon.png') no-repeat;
+		width: 30px;
+		height: 30px;
+		position: absolute;
+		right: 0px;
+	}
+	nav>ul {
+		display: none;
+	}
 	body header .row #gnb {
-		position:static;
+		position: static;
 	}
-	body header .row #gnb ul {background-color:#fff;width:100%;}
+	body header .row #gnb ul {
+		background-color: #fff;
+		width: 100%;
+	}
 	body header .row #gnb ul li {
-		float:none;
-		margin-right:0;
-		margin-bottom:1px;
-		border-top:1px solid #555;
-		border-bottom:1px solid #555;
-		padding:10px 30px;
-		background-color:rgba(56,56,56,1);
+		float: none;
+		margin-right: 0;
+		margin-bottom: 1px;
+		border-top: 1px solid #555;
+		border-bottom: 1px solid #555;
+		padding: 10px 30px;
+		background-color: rgba(56, 56, 56, 1);
 	}
-	body header .row #gnb ul li:hover, 
-	body header .row #gnb ul li:active{
-		background-color:rgba(0,0,0,1);
+	body header .row #gnb ul li:hover, body header .row #gnb ul li:active {
+		background-color: rgba(0, 0, 0, 1);
 	}
-	body header .row #gnb ul li a{
-		color:#fff;
-		text-shadow:none;
+	body header .row #gnb ul li a {
+		color: #fff;
+		text-shadow: none;
 	}
-	section#contents #main img, 
-	section#contents #sub img {
-		width:90%;
-		padding:10px;
-		border:1px solid #e0e0e0;
-		background:#fff;
+	section#contents #main img, section#contents #sub img {
+		width: 90%;
+		padding: 10px;
+		border: 1px solid #e0e0e0;
+		background: #fff;
 	}
-	footer p{
+	footer p {
 		padding-top: 0px !important;
-		padding-bottom:15px !important;
-		width:90% !important;
-		margin:0 auto !important;
-		background:none !important;
+		padding-bottom: 15px !important;
+		width: 90% !important;
+		margin: 0 auto !important;
+		background: none !important;
 	}
 }
-.nivo-caption{text-align:center !important;}
-.nivoSlider {height:400px !important;}
-.nivoSlider img {height:400px !important;}
+
+.nivo-caption {text-align: center !important;}
+.nivoSlider {height: 400px !important;}
+.nivoSlider img {height: 400px !important;}
+.row{margin-right:auto !important; margin-left:auto !important;}
+.carousel-inner .item img{
+	height:600px !important;
+	width:100% !important;
+}
+.carousel-control .slide_arrow{
+	position:absolute;
+	top:50%;	
+}
 </style>
 <script src="/resources/js/jquery.min.js"></script>
 <script type="text/javascript">
 	jQuery(function($) { //j쿼리 시작 : $(document).ready(function(){ }); == $(function(){ }); 과 동일
-	//모바일 메뉴		
-		var pull=$('#pull');
-			menu=$('nav>ul');
-			$(pull).on('click',function(e){
-				var w=$(window).width();
-				if(w<960){
-					if(menu.is(':visible')){
-						//alert('닫을때');
-						menu.slideToggle("slow");
-						return;
-					}
-					if(menu.is(':hidden')){
-						//alert('열때');
-						menu.slideToggle("fast");
-						return;
-					}
-				}
-				
-			});//event end
-			//모바일 토글에 대한 스타일 -> PC에서는 없앤다.
-			$(window).resize(function(){
-				var w=$(window).width();
-				var menu=$('nav >ul');
-				if(w>960){
-					menu.removeAttr('style');
-				}else{}
+		//모바일 메뉴		
+		var pull = $('#pull');
+		menu = $('nav>ul');
+		$(pull).on('click', function(e) {
+			var w = $(window).width();
+			if (w < 960) {
+				if (menu.is(':visible')) {
+					//alert('닫을때');
+					menu.slideToggle("slow");
 					return;
-			});
+				}
+				if (menu.is(':hidden')) {
+					//alert('열때');
+					menu.slideToggle("fast");
+					return;
+				}
+			}
+
+		});//event end
+		//모바일 토글에 대한 스타일 -> PC에서는 없앤다.
+		$(window).resize(function() {
+			var w = $(window).width();
+			var menu = $('nav >ul');
+			if (w > 960) {
+				menu.removeAttr('style');
+			} else {
+			}
+			return;
+		});
 	});
 </script>
 </head>
@@ -413,6 +469,7 @@ img, iframe {
 		</div>
 	</header>
 	<!-- e:header-->
+	<!-- 니보슬라이더 작동 스크립트(아래)
 	<script src="/resources/js/jquery.nivo.slider.js"></script>
 	<link href="/resources/css/nivo-slider.css" media="screen" rel="stylesheet" type="text/css">
 	<script type="text/javascript">
@@ -432,14 +489,66 @@ img, iframe {
 				$('#slider img').attr("data-transition","slideInLeft");
 			});
 		});
-	</script>
+	</script> -->
 	<section class="banner_slider">
+		<!--니보 슬라이더용 비지니스 폼
 		<div id="slider" class="nivoSlider">
 			<img src="/resources/images/egypt.jpg" title="슬라이드1" />
 			<img src="/resources/images/egypt_02.jpg" title="슬라이드2" />
 			<img src="/resources/images/egypt_03.jpg" title="슬라이드3" />
 			<img src="/resources/images/egypt_04.jpg" title="슬라이드4" />
+		</div> -->
+		<link href="/resources/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+		<script src="/resources/bootstrap/js/bootstrap.min.js"></script>
+		<script>
+			jQuery(function($){
+				$('.carousel').carousel({
+					  interval: 2000,
+					  pause:false
+					})
+			});
+		</script>
+		<div id="carouselExampleIndicators" class="carousel slide"
+			data-ride="carousel">
+			<ol class="carousel-indicators">
+				<li data-target="#carouselExampleIndicators" data-slide-to="0"
+					class="active"></li>
+				<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+				<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+				<li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+			</ol>
+			<div class="carousel-inner">
+				<div class="item active">
+					<img src="/resources/images/egypt.jpg" class="d-block w-100"
+						alt="...">
+				</div>
+				<div class="item">
+					<img src="/resources/images/egypt_02.jpg" class="d-block w-100"
+						alt="...">
+				</div>
+				<div class="item">
+					<img src="/resources/images/egypt_03.jpg" class="d-block w-100"
+						alt="...">
+				</div>
+				<div class="item">
+					<img src="/resources/images/egypt_04.jpg" class="d-block w-100"
+						alt="...">
+				</div>
+			</div>
+<!-- 			<a class="left carousel-control" style="font-size:40px; font-weitht:bold;" href="#carouselExampleIndicators" data-slide="prev" onclick="$('#myCarousel').carousel('prev')">
+			<span class="slide_arrow">&lt;</span></a>
+	  		<a class="right carousel-control" style="font-size:40px; font-weitht:bold;" href="#carouselExampleIndicators" data-slide="next" onclick="$('#myCarousel').carousel('next')">
+	  		<span class="slide_arrow">&gt;</span></a> -->
+		<a class="left carousel-control" href="#carouselExampleIndicators"
+				role="button" data-slide="prev"> 
+			<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>			
+		</a> 
+		<a class="right carousel-control" href="#carouselExampleIndicators"
+				role="button" data-slide="next">
+			<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+		</a>
 		</div>
+
 	</section>
 	<section id="contents" class="row">
 		<article id="main">
@@ -470,13 +579,13 @@ img, iframe {
 				사이트 구성이 많습니다. 관심있게 살펴봐 주시기 바랍니다.
 			</h3>
 			<ul>
-				<li class="col-3"><img src="/resources/images/egypt.jpg"
-					alt="" width="218" height="325" />
+				<li class="col-3"><img src="/resources/images/egypt.jpg" alt=""
+					width="218" height="325" />
 					<h5>글로벌윙사이트 리뉴얼 완료</h5>
 					<p>사이트URL: www.globalwing.co.kr ( 제로보드xe기반 ) -> 워드프레스 기반으로
 						리뉴얼완료 글로벌윙 사이트 메인시안</p></li>
-				<li class="col-3"><img src="/resources/images/egypt.jpg"
-					alt="" width="218" height="326" />
+				<li class="col-3"><img src="/resources/images/egypt.jpg" alt=""
+					width="218" height="326" />
 					<h5>크리웰터 사이트 오픈완료.</h5>
 					<p>크리웰터 사이트 작업중 입니다. 워드프레스 기반의 영문홈페이지 입니다. 오픈되었습니다.</p></li>
 				<li class="col-6 last"><img src="/resources/images/egypt.jpg"
