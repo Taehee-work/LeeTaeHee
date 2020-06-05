@@ -2,6 +2,18 @@ package kr.or.test;
 
 import java.util.Scanner;
 
+class Tire {
+	public void run() {
+		System.out.println("일반 타이어가 굴러갑니다.");
+	}
+}
+class SnowTire extends Tire{
+	@Override
+	public void run() {
+		System.out.println("스노우 타이어가 굴러갑니다.");
+	}
+}
+
 /*public class HelloWorld {
 	public static void main(String[] args) {
 		System.out.println("안녕하세요. Hello World 자바!");
@@ -42,7 +54,14 @@ import java.util.Scanner;
 }*/
 public class HelloWorld{
 	public static void main(String[] args) {
-		boolean run = true;
+		/* SnowTire클래스형 변수 snowTire 생성,
+		new 키워드로 SnowTire()매서드를 이용해서 snowTire인스턴스 실행된 상태 */
+		SnowTire snowTire = new SnowTire();
+		Tire tire = snowTire;
+		snowTire.run();
+		tire.run();
+		
+/*		boolean run = true;
 		int balance = 0;
 		Scanner scanner = new Scanner(System.in);
 		
@@ -65,7 +84,7 @@ public class HelloWorld{
 			}else if(menuNum==4) {
 				run = false;
 			}
-/*			switch(menuNum) {
+			switch(menuNum) {
 				case 1:
 					System.out.print("입금액을 입력하세요>");
 					balance = balance + scanner.nextInt();
@@ -81,9 +100,9 @@ public class HelloWorld{
 				case 4:
 					run = false;
 					break;
-			}*/
+			}
 			System.out.println();
 		}
-		System.out.println("프로그램 while문이 종료되었습니다.");
+		System.out.println("프로그램 while문이 종료되었습니다."); */
 	}
 }
