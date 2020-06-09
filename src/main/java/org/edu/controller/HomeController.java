@@ -19,6 +19,14 @@ public class HomeController {
 
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 
+	//샘플 파일 홈입니다.
+	@RequestMapping(value = "/sample/", method = RequestMethod.GET)
+	public String sample(Locale locale, Model model) {
+
+		return "sample/home";
+
+	}
+	
 	/**
 	 * Simply selects the home view to render by returning its name.
 	 */
@@ -43,43 +51,43 @@ public class HomeController {
 	 *  @return
 	 **/
 	/* slide 페이지 파일 입니다. */
-	@RequestMapping(value = "/slide", method = RequestMethod.GET)
+	@RequestMapping(value = "/sample/slide", method = RequestMethod.GET)
 	public String slide(Locale locale, Model model) {
 
-		return "slide";
+		return "sample/slide";
 	}
 	/* we are 페이지 파일 입니다. */
-	@RequestMapping(value = "/weare", method = RequestMethod.GET)
+	@RequestMapping(value = "/sample/weare", method = RequestMethod.GET)
 	public String weare(Locale locale, Model model) {
 
-		return "weare";
+		return "sample/weare";
 	}
 	
 	/* work 페이지 파일 입니다. */
-	@RequestMapping(value = "/work", method = RequestMethod.GET)
+	@RequestMapping(value = "/sample/work", method = RequestMethod.GET)
 	public String work(Locale locale, Model model) {
 
-		return "work";
+		return "sample/work";
 	}
 	
 	/* blog 페이지 파일 입니다. */
-	@RequestMapping(value = "/blog", method = RequestMethod.GET)
+	@RequestMapping(value = "/sample/blog", method = RequestMethod.GET)
 	public String blog(Locale locale, Model model) {
 
-		return "blog";
+		return "sample/blog";
 	}
 	
 	/* contactus 페이지 파일 입니다. */
-	@RequestMapping(value = "/contactus", method = RequestMethod.GET)
+	@RequestMapping(value = "/sample/contactus", method = RequestMethod.GET)
 	public String contactus(Locale locale, Model model) {
 
-		return "contactus";
+		return "sample/contactus";
 	}
 		
-	@RequestMapping(value = "/htmltest", method = RequestMethod.GET)
+	@RequestMapping(value = "/sample/htmltest", method = RequestMethod.GET)
 	public String htmltest(Locale locale, Model model) {
 
-		return "htmltest";
+		return "sample/htmltest";
 
 	}
 
