@@ -33,6 +33,6 @@ public class Step3 {
 			System.out.println("월요일에는 활기가 넘칩니다.");
 		}else{
 			System.out.println("열심히 자바 공부를 합시다.");	
-			}
+		}
 	}
 }
