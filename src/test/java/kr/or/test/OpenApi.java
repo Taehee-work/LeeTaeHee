@@ -64,5 +64,5 @@ public class OpenApi {
 			}
 		},0,sleepSec,TimeUnit.SECONDS);
 		serviceApi();
-	} 
+	}
 }
