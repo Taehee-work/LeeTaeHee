@@ -12,18 +12,16 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-//locations으로 불러오도록 처리
 @ContextConfiguration(locations ={"file:src/main/webapp/WEB-INF/spring/**/*.xml"})
 @WebAppConfiguration
-
 public class DataSourceTest {
+
 	@Inject
 	private DataSource ds;
 	
 	@Test
-	public void testConnection()throws Exception{
+	public void testConnection() throws Exception {
 		Connection con = ds.getConnection();
-		System.out.println("데이터베이스 커넥션 성공:" + con);		
+		System.out.println("데이터베이스 커넥션 성공 : " + con);
 	}
-	
 }
