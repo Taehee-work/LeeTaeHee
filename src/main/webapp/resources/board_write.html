@@ -5,16 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-<title>AdminLTE 3 | 관리자 화면</title>
+<title>AdminLTE 3 | 관리자화면</title>
 
 <!-- Font Awesome Icons -->
 <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
 <!-- Theme style -->
 <link rel="stylesheet" href="dist/css/adminlte.min.css">
 <!-- Google Font: Source Sans Pro -->
-<link
-	href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700"
-	rel="stylesheet">
+<link rel="stylesheet"
+	href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
 </head>
 <body class="hold-transition sidebar-mini">
 	<div class="wrapper">
@@ -41,9 +40,8 @@
 				</div>
 			</form>
 
-
+			<!-- Right navbar links -->
 			<ul class="navbar-nav ml-auto">
-				<!-- Messages Dropdown Menu -->
 				<li class="nav-item"><a class="nav-link"
 					data-widget="control-sidebar" data-slide="true" href="#"
 					role="button"><i class="fas fa-th-large"></i></a></li>
@@ -69,7 +67,7 @@
 							class="img-circle elevation-2" alt="User Image">
 					</div>
 					<div class="info">
-						<a href="#" class="d-block">User02 &nbsp;<span
+						<a href="#" class="d-block">User02 <span
 							class="right badge badge-danger">Online</span>
 						</a>
 					</div>
@@ -87,7 +85,7 @@
 							class="nav-link active"> <i
 								class="nav-icon fas fa-tachometer-alt"></i>
 								<p>
-									대시보드 <i class="right fas fa-angle-left"></i>
+									Dashboard <i class="right fas fa-angle-left"></i>
 								</p>
 						</a>
 							<ul class="nav nav-treeview">
@@ -114,7 +112,7 @@
 				<div class="container-fluid">
 					<div class="row mb-2">
 						<div class="col-sm-6">
-							<h1 class="m-0 text-dark">Starter Page</h1>
+							<h1 class="m-0 text-dark">DashBoard Management</h1>
 						</div>
 						<!-- /.col -->
 						<div class="col-sm-6">
@@ -126,86 +124,98 @@
 						<!-- /.col -->
 					</div>
 					<!-- /.row -->
-
-					<div class="col-12">
-						<!-- general form elements disabled -->
-						<div class="card card-warning">
-							<div class="card-header">
-								<h3 class="card-title">General Elements</h3>
-							</div>
-							<!-- /.card-header -->
-							<div class="card-body">
-								<form role="form">
-									<div class="row">
-										<div class="col-sm-6">
-											<!-- text input -->
-											<div class="form-group">
-												<label>Text</label> <input type="text" class="form-control"
-													placeholder="Enter ...">
-											</div>
-										</div>
-										<div class="col-sm-6">
-											<div class="form-group">
-												<label>Text Disabled</label> <input type="text"
-													class="form-control" placeholder="Enter ..." disabled="">
-											</div>
-										</div>
-									</div>
-									<div class="row">
-										<div class="col-sm-6">
-											<!-- textarea -->
-											<div class="form-group">
-												<label>Textarea</label>
-												<textarea class="form-control" rows="3"
-													placeholder="Enter ..."></textarea>
-											</div>
-										</div>
-										<div class="col-sm-6">
-											<div class="form-group">
-												<label>Textarea Disabled</label>
-												<textarea class="form-control" rows="3"
-													placeholder="Enter ..." disabled=""></textarea>
-											</div>
-										</div>
-									</div>
-								</form>
-							</div>
-							<!-- /.card-body -->
-						</div>
-						<!-- /.card -->
-					</div>
-
 				</div>
 				<!-- /.container-fluid -->
-			</div>
-			<!-- /.content-header -->
+				<div class="col-md-12">
+					<!-- general form elements disabled -->
+					<div class="card card-warning">
+						<div class="card-header">
+							<h3 class="card-title">CREATE BOARD</h3>
+						</div>
+						<!-- /.card-header -->
+						<div class="card-body">
+							<form role="form">
+								<div class="row">
+									<div class="col-sm-12">
+										<!-- text input -->
+										<div class="form-group">
+											<label>Title</label> <input type="text" class="form-control"
+												placeholder="Enter Title">
+										</div>
+									</div>
+									<div class="col-sm-12">
+										<div class="form-group">
+											<label>Content</label>
+											<textarea class="form-control" rows="3"
+												placeholder="Enter Writer"></textarea>
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-sm-12">
+										<!-- textarea -->
+										<div class="form-group">
+											<label>Writer</label> <input type="text" class="form-control"
+												placeholder="Enter ...">
+										</div>
+									</div>
 
-			<!-- Main content -->
-			<div class="content"></div>
-			<!-- /.content -->
+
+									<div class="col-sm-12">
+										<div class="form-group">
+											<label>아래 영역에 파일을 드래그 해서 업로드 가능</label>
+											<div class="col-sm-12">
+												<!-- textarea -->
+												<div class="form-group">
+													<textarea class="form-control" rows="3" disabled=""></textarea>
+												</div>
+											</div>
+											<div class="custom-file">
+												<tr>
+													<td>아래 기존 파일 업로드 창 사용가능</td>
+													<br>
+													<td><input type="file" value="파일 선택" name="file" /></td>
+												</tr>
+											</div>
+										</div>
+										<div class="buttons">
+											<button type="submit" class="btn btn-warning">Submit</button>
+											<button type="submit" class="btn btn-primary">LIST
+												ALL</button>
+										</div>
+									</div>
+								</div>
+							</form>
+						</div>
+						<!-- /.content-header -->
+
+						<!-- Main content -->
+						<div class="content"></div>
+						<!-- .content  -->
+					</div>
+					<!-- Control Sidebar -->
+					<aside class="control-sidebar control-sidebar-dark">
+						<!-- Control sidebar content goes here -->
+						<div class="p-3">
+							<h5>Title</h5>
+							<p>Sidebar content</p>
+							<button type="button" class="btn btn-primary btn-lg btn-block">로그아웃</button>
+						</div>
+					</aside>
+					<!-- /.control-sidebar -->
+				</div>
+			</div>
 		</div>
-		<!-- /.content-wrapper -->
-
-		<!-- Control Sidebar -->
-		<aside class="control-sidebar control-sidebar-dark">
-			<!-- Control sidebar content goes here -->
-			<div class="p-3">
-				<h5>Title</h5>
-				<p>Sidebar content</p>
-				<button type="button" class="btn btn-success btn-lg btn-block">로그아웃</button>
-			</div>
-		</aside>
-		<!-- /.control-sidebar -->
-
 		<!-- Main Footer -->
 		<footer class="main-footer">
 			<!-- To the right -->
-			<div class="float-right d-none d-sm-inline">For The Horde</div>
+			<div class="float-right d-none d-sm-inline">Anything you want</div>
 			<!-- Default to the left -->
-			<strong>Copyright &copy; 2014-2020
-			<a href="https://adminlte.io">AdminLTE.io</a>.
+			<strong>Copyright &copy; 2014-2020 <a
+				href="https://adminlte.io">AdminLTE.io</a>.
 			</strong> All rights reserved.
 		</footer>
+		<div id="sidebar-overlay"></div>
 	</div>
 	<!-- ./wrapper -->
 
