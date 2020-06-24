@@ -14,12 +14,12 @@ public class OpenApi {
 	
 	public static void serviceApi() {
 		//외부연계 메서드
-		/* 입력된 데이터가 바로 전달되지 않고 중간에 버퍼링이 된 후에 전달되됩니다. 
-		 * 출력도 마찬가지로 버퍼를 거쳐서 간접적으로 출력장치로 전달되기에 시스템의 
-		 * 데이터처리 효율성을 높여주며 버퍼스트림을
+		/* 입력된 데이터가 바로 전달되지 않고 중간에 버퍼링이 된 후에 전달 
+		 * 출력도 마찬가지로 버퍼를 거쳐서 간접적으로 출력장치로 전달되기에 
+		 * 시스템의 데이터처리 효율성을 높여주며 버퍼스트림을
 		 * InputStreamReader / OutputStreamWriter를 같이 사용하여 
 		 * 버퍼링을 하게 되면 입출력 스트림으로부터 미리 버퍼에 데이터를 갖다 놓기 때문에 
-		 * 보다 효율적인 입출력이 가능합니다.*/
+		 * 보다 효율적인 입출력이 가능 */
 		BufferedReader br = null;//HRD-net에서 전송받은 데이터를 일시 저장하는 곳
 		String urlstr = "http://www.hrd.go.kr/jsp/HRDP/HRDPO00/HRDPOA60/HRDPOA60_1.jsp"
 				+ "?returnType=XML&authKey=인증키부분&pageNum="

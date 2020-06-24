@@ -1,31 +1,31 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ include file = "include/header.jsp" %>
+<%@ include file="include/header.jsp"%>
 
 <!-- Content Wrapper. Contains page content -->
-		<div class="content-wrapper">
-			<!-- Content Header (Page header) -->
-			<div class="content-header">
-				<div class="container-fluid">
-					<div class="row mb-2">
-						<div class="col-sm-6">
-							<h1 class="m-0 text-dark">Starter Page</h1>
-						</div>
-						<!-- /.col -->
-						<div class="col-sm-6">
-							<ol class="breadcrumb float-sm-right">
-								<li class="breadcrumb-item"><a href="#">Home</a></li>
-								<li class="breadcrumb-item active">Starter Page</li>
-							</ol>
-						</div>
-						<!-- /.col -->
-					</div>
-					<!-- /.row -->
+<div class="content-wrapper">
+	<!-- Content Header (Page header) -->
+	<div class="content-header">
+		<div class="container-fluid">
+			<div class="row mb-2">
+				<div class="col-sm-6">
+					<h1 class="m-0 text-dark">Starter Page</h1>
 				</div>
-				<!-- /.container-fluid -->
+				<!-- /.col -->
+				<div class="col-sm-6">
+					<ol class="breadcrumb float-sm-right">
+						<li class="breadcrumb-item"><a href="/admin">Home</a></li>
+						<li class="breadcrumb-item active">Starter Page</li>
+					</ol>
+				</div>
+				<!-- /.col -->
 			</div>
-			<!-- /.content-header -->
+			<!-- /.row -->
 		</div>
-		<!-- /.content-wrapper -->
+		<!-- /.container-fluid -->
+	</div>
+	<!-- /.content-header -->
+</div>
+<!-- /.content-wrapper -->
 
-<%@ include file = "include/footer.jsp"%>
+<%@ include file="include/footer.jsp"%>

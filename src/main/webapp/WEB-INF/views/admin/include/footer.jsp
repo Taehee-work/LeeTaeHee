@@ -32,5 +32,23 @@
 <script src="/resources/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- AdminLTE App -->
 <script src="/resources/dist/js/adminlte.min.js"></script>
+
+<script>
+	$(document).ready(function() {
+		var current = location.pathname;
+		$('.nav-treeview li a').each(function() { //클래스를 가져올때 '.클래스명'으로 '.'을 붙인다 
+			var $this = $(this);
+			if (current == "/admin" || current == "/admin/") {
+
+			} else {
+				if ($this.attr('href').includes(current) == true) {
+					$this.addClass('active');
+				} else {
+					$this.removeClass('active');
+				}
+			}
+		})
+	});
+</script>
 </body>
 </html>

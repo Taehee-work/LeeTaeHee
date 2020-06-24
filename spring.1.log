@@ -1,7 +1,5 @@
-2020-06-22 10:46:21,930  WARN [org.apache.log4j.joran.action.PriorityAction] Priority element has been deprecated, please use <level> instead.
-2020-06-22 10:46:21,954  INFO [kr.or.test.Log4jTest] test라는 메서드를 사용한 PC의 아이피는: 192.168.56.1
-2020-06-22 10:46:21,954 DEBUG [kr.or.test.Log4jTest] debug임!!MemberVO클래스 [이름은=홍길동, 나이는=24, 전화번호는=null]
-2020-06-22 10:46:21,954  INFO [kr.or.test.Log4jTest] Info임!!
-2020-06-22 10:46:21,955  WARN [kr.or.test.Log4jTest] warn임!!
-2020-06-22 10:46:21,955 ERROR [kr.or.test.Log4jTest] error임!!
-2020-06-22 10:46:21,955 FATAL [kr.or.test.Log4jTest] fatal임!!
+2020-06-24 14:26:18,376  INFO [org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseFactory] Starting embedded database: url='jdbc:hsqldb:mem:dataSource', username='sa'
+2020-06-24 14:26:18,803  INFO [org.springframework.jdbc.datasource.init.ScriptUtils] Executing SQL script from class path resource [db/edu_hsql.sql]
+2020-06-24 14:26:18,830  INFO [org.springframework.jdbc.datasource.init.ScriptUtils] Executed SQL script from class path resource [db/edu_hsql.sql] in 26 ms.
+2020-06-24 14:26:18,966  INFO [org.springframework.web.context.support.GenericWebApplicationContext] Closing org.springframework.web.context.support.GenericWebApplicationContext@cd2dae5: startup date [Wed Jun 24 14:26:16 KST 2020]; root of context hierarchy
+2020-06-24 14:26:18,968  INFO [org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseFactory] Shutting down embedded database: url='jdbc:hsqldb:mem:dataSource'
