@@ -19,7 +19,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</insert>
 	<select id="selectMember" resultType="org.edu.vo.MemberVO">
 	<![CDATA[  
-		select * from tbk_member order by reg_date DESC
+		select * from tbl_member order by reg_date DESC
 	]]>
 	</select>
 	<update id="updateMember">
