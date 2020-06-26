@@ -41,7 +41,8 @@
 			if (current == "/admin" || current == "/admin/") {
 
 			} else {
-				if ($this.attr('href').includes(current) == true) {
+				//if ($this.attr('href').includes(current) == true) {
+				if ($this.attr('href').indexOf(current) != -1) {
 					$this.addClass('active');
 				} else {
 					$this.removeClass('active');

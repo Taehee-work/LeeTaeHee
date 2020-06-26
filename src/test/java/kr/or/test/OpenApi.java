@@ -25,7 +25,7 @@ public class OpenApi {
 				+ "HRDPOA60_1.jsp?returnType=XML&authKey="
 				+ "인증키부분&pageNum=1&pageSize=10&srchTraStDt="
 				+ "20200501&srchTraEndDt=20201231&outType=1&sort="
-				+ "DESC&sortCol=TR_STT_DT&srchTraArea1=44";
+				+ "DESC&sortCol=TR_STT_DT&srchTraArea1=44";//DESC&sortCol 내림차순
 		
 		try {
 			URL url = new URL(urlstr);
