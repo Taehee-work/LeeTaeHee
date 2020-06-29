@@ -14,6 +14,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
 public class AdminController {
@@ -51,6 +52,19 @@ public class AdminController {
 		MemberVO memberVO = memberService.viewMember(user_id);
 		model.addAttribute("memberVO",memberVO);
 		return "admin/member/member_view";
+		}
+	
+	/* 회원관리 > 등록 */
+	@RequestMapping(value = "/admin/member/write", method = RequestMethod.GET)
+	public String memberWrite(Locale locale, Model model) throws Exception {
+
+		return "admin/member/member_write";
+		}
+	
+	@RequestMapping(value = "/admin/member/write", method = RequestMethod.POST)
+	public String memberWrite(MemberVO memberVO, Locale locale, RedirectAttributes rdat) throws Exception {
+		memberService.insertMember(memberVO);
+		return "redirect:/admin/member/list";
 		}
 
 	/* 게시물 관리 리스트 */
