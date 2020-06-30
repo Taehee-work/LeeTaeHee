@@ -1,8 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-
-<!-- ../ -밖으로 빠져나오는 명령어 -->
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ include file="../include/header.jsp"%>
 
 <!-- Content Wrapper. Contains page content -->
@@ -30,61 +28,58 @@
 			<!-- general form elements disabled -->
 			<div class="card card-warning">
 				<div class="card-header">
-					<h3 class="card-title">회원등록</h3>
+					<h3 class="card-title">UPDATE BOARD</h3>
 				</div>
 				<!-- /.card-header -->
 				<div class="card-body">
-					<form role="form" action="/admin/member/write" method="post">
+					<form role="form" action="/admin/board/update" method="post">
 						<div class="row">
 							<div class="col-sm-12">
 								<!-- text input -->
 								<div class="form-group">
-									<label>user_id</label><input name="user_id" type="text"
-										class="form-control" placeholder="Enter user_id">
+									<label>Title</label> <input value="${boardVO.title}" name="title" type="text" class="form-control"
+										placeholder="Enter Title">
+								</div>
+							</div>
+							<div class="col-sm-12">
+								<div class="form-group">
+									<label>Content</label>
+									<textarea name="content"class="form-control" rows="3"
+										placeholder="Enter Writer">${boardVO.content}</textarea>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-sm-12">
+								<!-- textarea -->
+								<div class="form-group">
+									<label>Writer</label> <input value="${boardVO.writer}" name="writer" type="text" class="form-control"
+										placeholder="Enter ...">
 								</div>
 							</div>
 
-							<div class="col-sm-12">
-								<!-- text input -->
-								<div class="form-group">
-									<label>user_pw</label><input name="user_pw" type="text"
-										class="form-control" placeholder="Enter user_pw">
-								</div>
-							</div>
 
 							<div class="col-sm-12">
-								<!-- text input -->
 								<div class="form-group">
-									<label>user_name</label><input name="user_name" type="text"
-										class="form-control" placeholder="Enter user_name">
+									<label>아래 영역에 파일을 드래그 해서 업로드 가능</label>
+									<div class="col-sm-12">
+										<!-- textarea -->
+										<div class="form-group">
+											<textarea class="form-control" rows="3" disabled=""></textarea>
+										</div>
+									</div>
+									<div class="custom-file">
+										<tr>
+											<td>아래 기존 파일 업로드 창 사용가능</td>
+											<br>
+											<td><input type="file" value="파일 선택" name="file" /></td>
+										</tr>
+									</div>
 								</div>
-							</div>
-
-							<div class="col-sm-12">
-								<!-- text input -->
-								<div class="form-group">
-									<label>email</label><input name="email" type="text"
-										class="form-control" placeholder="Enter email">
-								</div>
-							</div>
-							<div class="col-sm-12">
-								<div class="form-group">
-									<label>point</label> <input name="point" type="text"
-										class="form-control" placeholder="0">
-								</div>
-							</div>
-							<div class="form-group">
-								<label>enabled</label> <select name="enabled" class="form-control">
-									<option value="0">false</option>
-									<option value="1" selected>true</option>
-								</select> 
-								<label>level</label> <select name="levels" class="form-control">
-									<option value="ROLE_USER">ROLE_USER</option>
-									<option value="ROLE_ADMIN">ROLE_ADMIN</option>
-								</select> <br>
 								<div class="buttons">
+									<input type="hidden" name="bno" value="${boardVO.bno}">
 									<button type="submit" class="btn btn-warning">Submit</button>
-									<a href="/admin/member/list" class="btn btn-primary">LIST ALL</a>
+									<a href="/admin/board/list" class="btn btn-primary">LIST ALL</a>
 								</div>
 							</div>
 						</div>
@@ -98,7 +93,7 @@
 			</div>
 		</div>
 	</div>
-</div>
-<!-- ./Content Wrapper -->
+	</div>
+	<!-- ./Content Wrapper -->
 
-<%@ include file="../include/footer.jsp"%>
+	<%@ include file="../include/footer.jsp"%>

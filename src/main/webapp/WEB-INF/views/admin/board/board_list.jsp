@@ -90,7 +90,7 @@
 						</c:forEach>
 					</tbody>
 					<td>
-						<button type="submit" class="btn btn-primary">CREATE</button>
+						<a href="/admin/board/write" class="btn btn-primary">CREATE</a>
 					</td>
 					<td>
 						<nav aria-label="Contacts Page Navigation">

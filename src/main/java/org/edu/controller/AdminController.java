@@ -66,7 +66,23 @@ public class AdminController {
 		memberService.insertMember(memberVO);
 		return "redirect:/admin/member/list";
 		}
+	
+	/* 회원관리 > 수정 */
+	@RequestMapping(value = "/admin/member/update", method = RequestMethod.GET)
+	public String memberUpdate(@RequestParam("user_id") String user_id,Locale locale, Model model) throws Exception {
+		MemberVO memberVO = memberService.viewMember(user_id);
+		model.addAttribute("memberVO", memberVO);
+		return "admin/member/member_update";
+		}
+	
+	@RequestMapping(value = "/admin/member/update", method = RequestMethod.POST)
+	public String memberUpdate(MemberVO memberVO, Locale locale, RedirectAttributes rdat) throws Exception {
+		memberService.updateMember(memberVO);
+		rdat.addFlashAttribute("msg", "success");
+		return "redirect:/admin/member/view?user_id="+ memberVO.getUser_id();
+		}
 
+/*--Board---------------------------------------------------------------------*/	
 	/* 게시물 관리 리스트 */
 	@RequestMapping(value = "/admin/board/list", method = RequestMethod.GET)
 	public String boardList(Locale locale, Model model) throws Exception {
@@ -83,5 +99,31 @@ public class AdminController {
 		return "admin/board/board_view";
 		}
 	
-}
+	/* 게시물 관리 > 등록  */	
+	@RequestMapping(value = "/admin/board/write", method = RequestMethod.GET)
+	public String boardWrite(Locale locale,Model model) throws Exception {
+			return "admin/board/board_write";
+	}
+			
+	@RequestMapping(value = "/admin/board/write", method = RequestMethod.POST)
+	public String boardWrite(BoardVO boardVO,Locale locale,Model model) throws Exception {
+		boardService.insertBoard(boardVO);
+		return "redirect:/admin/board/list";
+	}
+	
+	/* 게시물 관리 > 수정  */	
+	@RequestMapping(value = "/admin/board/update", method = RequestMethod.GET)
+	public String boardUpdate(@RequestParam("bno") Integer bno, Locale locale, Model model) throws Exception {
+		BoardVO boardVO = boardService.viewBoard(bno);
+		model.addAttribute("boardVO", boardVO);
+		return "admin/board/board_update";
+	}
+			
+	@RequestMapping(value = "/admin/board/update", method = RequestMethod.POST)
+	public String boardUpdate(BoardVO boardVO,Locale locale,RedirectAttributes rdat) throws Exception {
+		boardService.updateBoard(boardVO);
+		rdat.addFlashAttribute("msg", "success");
+		return "redirect:/admin/board/view?bno=" + boardVO.getBno();
+	}
 
+}

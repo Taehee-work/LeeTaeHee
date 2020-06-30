@@ -4,7 +4,11 @@
 
 <!-- ../ -밖으로 빠져나오는 명령어 -->
 <%@ include file="../include/header.jsp"%>
-
+<script>
+if('${msg}' == "success"){
+	alert("수정되었습니다.!");
+}
+</script>
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
 	<!-- Content Header (Page header) -->
@@ -76,7 +80,7 @@
 							</div>
 							<div class="form-group"></div>
 							<div class="buttons">
-								<button type="submit" class="btn btn-warning">UPDATE</button>
+								<a href="/admin/member/update?user_id=${memberVO.user_id}" class="btn btn-warning">UPDATE</a>
 								<button type="submit" class="btn btn-danger">DELETE</button>
 								<a href="/admin/member/list" class="btn btn-primary">LIST ALL</a>
 							</div>
@@ -90,16 +94,6 @@
 				<div class="content"></div>
 				<!-- .content  -->
 			</div>
-			<!-- Control Sidebar -->
-			<aside class="control-sidebar control-sidebar-dark">
-				<!-- Control sidebar content goes here -->
-				<div class="p-3">
-					<h5>Title</h5>
-					<p>Sidebar content</p>
-					<button type="button" class="btn btn-primary btn-lg btn-block">로그아웃</button>
-				</div>
-			</aside>
-			<!-- /.control-sidebar -->
 		</div>
 	</div>
 </div>
