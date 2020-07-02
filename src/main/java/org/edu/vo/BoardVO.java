@@ -12,6 +12,7 @@ public class BoardVO {
 	private Date update_data;
 	private int view_count;
 	private int reply_count;
+	private String[] files; //첨부파일 용 변수 추가
 	
 	public Integer getBno() {
 		return bno;
@@ -62,12 +63,18 @@ public class BoardVO {
 		this.reply_count = reply_count;
 	}
 	
+	public String[] getFiles() {
+		return files;
+	}
+	public void setFiles(String[] files) {
+		this.files = files;
+	}
+	
 	@Override
 	public String toString() {
 		return "BoardVO [bno=" + bno + ", title=" + title + ", content=" + content + ", writer=" + writer
 				+ ", regdate=" + regdate + ", update_data=" + update_data + ", view_count=" + view_count
 				+ ", reply_count=" + reply_count + "]";
 	}
-	
-	
+		
 }

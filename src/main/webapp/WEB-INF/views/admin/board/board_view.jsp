@@ -31,7 +31,7 @@
 				</div>
 				<!-- /.card-header -->
 				<div class="card-body">
-					<form role="form">
+					<form role="form" action="/admin/board/delete" method = "post">
 						<div class="row">
 							<div class="col-sm-12">
 								<!-- text input -->
@@ -62,7 +62,7 @@
 								<a href="/admin/board/list" class="btn btn-primary">LIST ALL</a>
 							</div>
 						</div>
-
+						<input type="hidden" name="bno" value="${boardVO.bno}">
 					</form>
 				</div>
 				<!-- /.content-header -->
@@ -83,6 +83,13 @@
 										<div class="form-group">
 											<label>Writer</label> <input type="text" class="form-control"
 												placeholder="USER ID">
+										</div>
+									</div>
+																		<div class="col-sm-12">
+										<!-- text input -->
+										<div class="form-group">
+											<label>FileDownload</label> 
+											<a href="/download?filename=${boardVO.files[0]}"><br>${boardVO.files[0]}</a>
 										</div>
 									</div>
 

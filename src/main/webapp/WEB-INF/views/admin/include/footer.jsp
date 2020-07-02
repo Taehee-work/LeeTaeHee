@@ -36,13 +36,15 @@
 <script>
 	$(document).ready(function() {
 		var current = location.pathname;
+		//alert(current.split("/",3)[2]); -디버그 값
+		var current_split = current.split("/",3)[2];//board 또는 member 값을 찾는다
 		$('.nav-treeview li a').each(function() { //클래스를 가져올때 '.클래스명'으로 '.'을 붙인다 
 			var $this = $(this);
 			if (current == "/admin" || current == "/admin/") {
 
 			} else {
 				//if ($this.attr('href').includes(current) == true) {
-				if ($this.attr('href').indexOf(current) != -1) {
+				if ($this.attr('href').indexOf(current_split) != -1) {
 					$this.addClass('active');
 				} else {
 					$this.removeClass('active');

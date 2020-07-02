@@ -4,11 +4,7 @@
 
 <!-- ../ -밖으로 빠져나오는 명령어 -->
 <%@ include file="../include/header.jsp"%>
-<script>
-if('${msg}' == "success"){
-	alert("수정되었습니다.!");
-}
-</script>
+
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
 	<!-- Content Header (Page header) -->
@@ -38,7 +34,7 @@ if('${msg}' == "success"){
 				</div>
 				<!-- /.card-header -->
 				<div class="card-body">
-					<form role="form">
+					<form role="form" action="/admin/member/delete" method="post">
 						<div class="row">
 							<div class="col-sm-12">
 								<!-- text input -->
@@ -85,6 +81,7 @@ if('${msg}' == "success"){
 								<a href="/admin/member/list" class="btn btn-primary">LIST ALL</a>
 							</div>
 						</div>
+						<input type="hidden" name="user_id" value="${memberVO.user_id}">
 
 					</form>
 				</div>
