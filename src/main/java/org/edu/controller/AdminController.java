@@ -9,7 +9,9 @@ import java.util.UUID;
 
 import javax.annotation.Resource;
 import javax.inject.Inject;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.validation.Valid;
 
 import org.edu.service.IF_BoardService;
 import org.edu.service.IF_MemberService;
@@ -178,7 +180,7 @@ public class AdminController {
 	}
 			
 	@RequestMapping(value = "/admin/board/write", method = RequestMethod.POST)
-	public String boardWrite(MultipartFile file,BoardVO boardVO,Locale locale,RedirectAttributes rdat) throws Exception {
+	public String boardWrite(MultipartFile file,@Valid BoardVO boardVO,Locale locale,RedirectAttributes rdat) throws Exception {
 		//System.out.println("===첨부파일없이 저장===" + file.getOriginalFilename());
 		if(file.getOriginalFilename() == "") {
 			boardService.insertBoard(boardVO);
@@ -212,7 +214,7 @@ public class AdminController {
 	}
 			
 	@RequestMapping(value="/admin/board/update", method=RequestMethod.POST)
-	public String boardUpdate(@ModelAttribute("pageVO") PageVO pageVO,MultipartFile file, BoardVO boardVO,Locale locale,RedirectAttributes rdat) throws Exception {
+	public String boardUpdate(@ModelAttribute("pageVO") PageVO pageVO,MultipartFile file, @Valid BoardVO boardVO,Locale locale,RedirectAttributes rdat) throws Exception {
 		if(file.getOriginalFilename() == "") {//조건:첨부파일 전송 값이 없으면
 			boardService.updateBoard(boardVO);
 		}else {

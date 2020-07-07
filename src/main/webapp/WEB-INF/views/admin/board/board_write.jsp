@@ -38,7 +38,8 @@
 								<!-- text input -->
 								<div class="form-group">
 									<label>Title</label> <input name="title" type="text" class="form-control"
-										placeholder="Enter Title">
+										placeholder="Enter Title"> 
+									<!-- required:해당칸에 내용을 입력하지 않으면 알림창띄움 -->
 								</div>
 							</div>
 							<div class="col-sm-12">
