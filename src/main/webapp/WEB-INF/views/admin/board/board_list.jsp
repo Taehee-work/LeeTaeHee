@@ -31,21 +31,19 @@
 				</div>
 			</div>
 		</div>
-		<div class="col-1" style="display: inline-block">
-			<select class="form-control">
-				<option>--</option>
-			</select>
-		</div>
-		<div class="search" name="search_keyword" style="display: inline">
-			<input type="text" placeholder="">
-			<div class="button" style="display: inline">
-				<button name="btn_search">검색</button>
+		<form action="/admin/board/list">
+			<div class="col-3" style="display: inline-block">
+				<select name="searchType" class="form-control">
+					<option value="all">전체</option>
+				</select>
 			</div>
-			<div class="button" style="display: inline">
-				<button>새글쓰기</button>
+			<div class="search" style="display: inline">
+				<input name="searchKeyword" type="text" placeholder="">
+				<div class="button" style="display: inline">
+					<button>검색</button>
+				</div>
 			</div>
-		</div>
-
+		</form>
 	</div>
 	<div class="col-12">
 		<div class="card">
@@ -82,20 +80,34 @@
 						<c:forEach items="${boardList}" var="boardVO" varStatus="status">
 							<tr>
 								<td>${boardVO.bno}</td>
-								<td><a href="/admin/board/view?bno=${boardVO.bno}">${boardVO.title}</a></td>
+								<td><a
+									href="/admin/board/view?bno=${boardVO.bno}&page=${pageVO.page}">${boardVO.title}</a></td>
 								<td>${boardVO.writer}</td>
 								<td><span class="tag tag-success">${boardVO.regdate}</span></td>
 								<td><span class="badge badge-danger right">${boardVO.view_count}</span></td>
 							</tr>
 						</c:forEach>
 					</tbody>
-					<td>
-						<a href="/admin/board/write" class="btn btn-primary">CREATE</a>
+					<td><a href="/admin/board/write" class="btn btn-primary">CREATE</a>
 					</td>
 					<td>
 						<nav aria-label="Contacts Page Navigation">
-							<ul class="pagination justify-content-center m-0">
-								<li class="page-item active"><a class="page-link" href="#">1</a></li>
+							<ul class="pagination" style="position: relative; left: 40%;">
+								<c:if test="${pageVO.prev}">
+									<li class="page-item"><a class="page-link"
+										href="/admin/board/list?page=${pageVO.startPage-1}&searchType=${pageVO.searchType}&searchKeyword=${pageVO.searchKeyword}">◀</a></li>
+								</c:if>
+								<c:forEach begin="${pageVO.startPage}" end="${pageVO.endPage}"
+									var="idx">
+									<li
+										class='page-item <c:out value="${idx==pageVO.page?'active':''}"/>'>
+										<a class="page-link" href="/admin/board/list?page=${idx}&searchType=${pageVO.searchType}&searchKeyword=${pageVO.searchKeyword}">${idx}</a>
+									</li>
+								</c:forEach>
+								<c:if test="${pageVO.next}">
+									<li class="page-item"><a class="page-link"
+										href="/admin/board/list?page=${pageVO.endPage+1}&searchType=${pageVO.searchType}&searchKeyword=${pageVO.searchKeyword}">▶</a></li>
+								</c:if>
 							</ul>
 						</nav>
 					</td>

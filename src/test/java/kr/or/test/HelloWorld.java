@@ -1,5 +1,7 @@
 package kr.or.test;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 class Tire {
@@ -54,12 +56,42 @@ class SnowTire extends Tire{
 }*/
 public class HelloWorld{
 	public static void main(String[] args) {
+		//(page[jsp의 클릭변수] - 1) * prePgeNum[페이지당 보여줄 개수]
+		int startBno = (1-1)*10;//1페이지
+		System.out.println("퀴리변수(1page-1)*prePageNum = "+startBno);
+		startBno = (2-1)*10;//2페이지
+		System.out.println("퀴리변수(2page-1)*prePageNum = "+startBno);
+		startBno = (3-1)*10;//3페이지
+		System.out.println("퀴리변수(3page-1)*prePageNum = "+startBno);
+		
+		//천장 함수 사용법 - 1page, 2page, 3page
+		//마지막 페이지 넘버 구하는 식
+		int endPage = (int)(Math.ceil(1/10.0)*10);
+		System.out.println("Math.ceil(1page/10.0)*10 = "+endPage);
+		endPage = (int)(Math.ceil(2/10.0)*10);
+		System.out.println("Math.ceil(2page/10.0)*10 = "+endPage);
+		endPage = (int)(Math.ceil(3/10.0)*10);
+		System.out.println("Math.ceil(3page/10.0)*10 = "+endPage);
+		endPage = (int)(Math.ceil(11/10.0)*10);
+		System.out.println("Math.ceil(11page/10.0)*10 = "+endPage);
+		
+		List<String> files = new ArrayList<>();
+		files.add("sample1.jpg/");
+		files.add("sample2.jpg/");
+		files.add("sample3.jpg/");
+		
+		String[] filenames = new String[files.size()];  
+		int cnt = 0;
+		for(String fileName:files) {
+			filenames[cnt++]=fileName;
+		}
+		System.out.println(filenames[0] + filenames[1] + filenames[2]);
 		/* SnowTire클래스형 변수 snowTire 생성,
 		new 키워드로 SnowTire()매서드를 이용해서 snowTire인스턴스 실행된 상태 */
-		SnowTire snowTire = new SnowTire();
+/*		SnowTire snowTire = new SnowTire();
 		Tire tire = snowTire;
 		snowTire.run();
-		tire.run();
+		tire.run();*/
 		
 /*		boolean run = true;
 		int balance = 0;

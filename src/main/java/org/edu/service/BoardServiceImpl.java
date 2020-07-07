@@ -4,6 +4,7 @@ import java.util.List;
 import javax.inject.Inject;
 import org.edu.dao.IF_BoardDAO;
 import org.edu.vo.BoardVO;
+import org.edu.vo.PageVO;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -26,14 +27,23 @@ public class BoardServiceImpl implements IF_BoardService {
 	}
 
 	@Override
-	public List<BoardVO> selectBoard() throws Exception {
+	public List<BoardVO> selectBoard(PageVO pageVO) throws Exception {
 
-		return boardDAO.selectBoard();
+		return boardDAO.selectBoard(pageVO);
 	}
 
+	@Transactional
 	@Override
 	public void updateBoard(BoardVO boardVO) throws Exception {
 		boardDAO.updateBoard(boardVO);
+		//첨부파일용 서비스추가
+		String[] files= boardVO.getFiles();
+		Integer bno = boardVO.getBno();//tbl_attach 테이블 수정용 변수
+		if(files == null) {return;}
+		boardDAO.deleteAttach(bno);//기존 첨부파일 내용을 삭제
+		for(String fileName : files) {
+			boardDAO.updateAttach(fileName, bno);//신규 첨부파일 내용 입력
+		}
 	}
 	
 	@Transactional
@@ -51,6 +61,11 @@ public class BoardServiceImpl implements IF_BoardService {
 	@Override
 	public List<String> selectAttach(Integer bno) throws Exception {
 		return boardDAO.selectAttach(bno);
+	}
+
+	@Override
+	public int countBno(PageVO pageVO) throws Exception {
+		return boardDAO.countBno(pageVO);
 	}
 	
 }
