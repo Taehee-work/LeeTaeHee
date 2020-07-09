@@ -11,12 +11,26 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <mapper namespace="org.edu.dao.IF_MemberDAO">
 
+	<!-- 공통사용 검색쿼리 -->
+	<sql id="sqlWhere">
+		<if test="searchType != null">
+			AND(
+			user_id LIKE CONCAT('%',#{searchKeyword},'%')
+			or
+			user_name LIKE CONCAT('%',#{searchKeyword},'%')
+			or
+			email LIKE CONCAT('%',#{searchKeyword},'%')
+			)
+		</if>	
+	</sql>
+
 	<insert id="insertMember">
 		insert into tbl_member (user_id,user_pw,user_name,
 		email,point,enabled,levels,reg_date)
 		values (#{user_id},#{user_pw},#{user_name},
 		#{email},#{point},#{enabled},#{levels},now())
 	</insert>
+	
 	<select id="selectMember" resultType="org.edu.vo.MemberVO">
 <!-- 'Character Data'.'문자 데이터'를 말하는 것입니다. n이 용어를 
 	좀 더 정확하게 말하면 '(Unparsed) Character Data'.'파싱하지 않는 문자 
@@ -26,13 +40,25 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	'태그가 아니라 실제 쿼리에 필요한 코드'라고 알려줘야 한다. 
 	그때 사용하는 것이 <!CDATA[...]]> 이다. 한 마디로 XML parser에 의해 
 	해석하지말고 그대로 브라우저에 출력하라는 뜻이다. -->
-	<![CDATA[
-			select * from tbl_member order by reg_date DESC
-	]]>
+		select * from tbl_member
+		where 1=1
+		<include refid="sqlWhere"></include>
+		ORDER BY reg_date DESC
+		LIMIT #{startNo}, #{perPageNum}
 	</select>
+	
+	<select id="countUserId" resultType="int">
+		select count(*) from tbl_member
+		where 1=1
+		<include refid="sqlWhere"></include>
+	</select>
+	
+	
 	<update id="updateMember">
 		update tbl_member set
+		<if test="user_pw !=''">
 		user_pw = #{user_pw},
+		</if>
 		user_name =	#{user_name},
 		email = #{email},
 		point = #{point},
@@ -41,6 +67,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		update_date = now()
 		where user_id = #{user_id}
 	</update>
+	
 	<delete id="deleteMember">
 		delete from tbl_member where user_id = #{user_id}
 	</delete>

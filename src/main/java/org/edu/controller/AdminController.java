@@ -19,6 +19,7 @@ import org.edu.vo.BoardVO;
 import org.edu.vo.MemberVO;
 import org.edu.vo.PageVO;
 import org.springframework.core.io.FileSystemResource;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.util.FileCopyUtils;
@@ -55,19 +56,26 @@ public class AdminController {
 	
 	/* 회원관리 리스트 */
 	@RequestMapping(value = "/admin/member/list", method = RequestMethod.GET)
-	public String memberList(Locale locale, Model model) throws Exception {
-		List<MemberVO> list = memberService.selectMember();
+	public String memberList(@ModelAttribute("pageVO")PageVO pageVO,Locale locale, Model model) throws Exception {
+		if(pageVO.getPage() == null) {
+			pageVO.setPage(1);
+		}
+		pageVO.setPerPageNum(10);
+		pageVO.setTotalCount(memberService.countUserID(pageVO));
+		List<MemberVO> list = memberService.selectMember(pageVO);
 		/* model 변수로 jsp화면으로 memberService에서 
 		선택한 list변수 값을 memberList변수명으로 보낸다 
 		model{list -> memberList -> jsp} 보낸다 */
 		model.addAttribute("memberList", list);
+		model.addAttribute("pageVO",pageVO);
 		return "admin/member/member_list";
 		}
 	
 	/* 회원관리 상세보기 */
 	@RequestMapping(value = "/admin/member/view", method = RequestMethod.GET)
-	public String memberView(@RequestParam("user_id") String user_id,Locale locale, Model model) throws Exception {
+	public String memberView(@ModelAttribute("pageVO")PageVO pageVO, @RequestParam("user_id") String user_id,Locale locale, Model model) throws Exception {
 		MemberVO memberVO = memberService.viewMember(user_id);
+		model.addAttribute("pageVO", pageVO);
 		model.addAttribute("memberVO",memberVO);
 		return "admin/member/member_view";
 		}
@@ -80,7 +88,14 @@ public class AdminController {
 		}
 	
 	@RequestMapping(value = "/admin/member/write", method = RequestMethod.POST)
-	public String memberWrite(MemberVO memberVO, Locale locale, RedirectAttributes rdat) throws Exception {
+	public String memberWrite(@Valid MemberVO memberVO, Locale locale, RedirectAttributes rdat) throws Exception {
+		String new_pw = memberVO.getUser_pw();
+		if(new_pw != "") {
+			//스프링 시큐리티 4.x BCryptPassWordEncoder 암호 사용
+			BCryptPasswordEncoder bcryptPasswordEncoder = new BCryptPasswordEncoder(10);
+			String bcryptPassword = bcryptPasswordEncoder.encode(new_pw);//1234->암호화처리됨
+			memberVO.setUser_pw(bcryptPassword);//DB에 들어가기전 값 set시킴
+		}
 		memberService.insertMember(memberVO);
 		rdat.addFlashAttribute("msg", "수정");
 		return "redirect:/admin/member/list";
@@ -88,22 +103,30 @@ public class AdminController {
 	
 	/* 회원관리 > 수정 */
 	@RequestMapping(value = "/admin/member/update", method = RequestMethod.GET)
-	public String memberUpdate(@RequestParam("user_id") String user_id,Locale locale, Model model) throws Exception {
+	public String memberUpdate(@ModelAttribute("pageVO")PageVO pageVO, @RequestParam("user_id") String user_id,Locale locale, Model model) throws Exception {
 		MemberVO memberVO = memberService.viewMember(user_id);
 		model.addAttribute("memberVO", memberVO);
+		model.addAttribute("pageVO", pageVO);
 		return "admin/member/member_update";
 		}
 	
 	@RequestMapping(value = "/admin/member/update", method = RequestMethod.POST)
-	public String memberUpdate(MemberVO memberVO, Locale locale, RedirectAttributes rdat) throws Exception {
+	public String memberUpdate(@ModelAttribute("pageVO")PageVO pageVO, MemberVO memberVO, Locale locale, RedirectAttributes rdat) throws Exception {
+		String new_pw = memberVO.getUser_pw();
+		if(new_pw != "") {
+			//스프링 시큐리티 4.x BCryptPassWordEncoder 암호 사용
+			BCryptPasswordEncoder bcryptPasswordEncoder = new BCryptPasswordEncoder(10);
+			String bcryptPassword = bcryptPasswordEncoder.encode(new_pw);//1234->암호화처리됨
+			memberVO.setUser_pw(bcryptPassword);//DB에 들어가기전 값 set시킴
+		}
 		memberService.updateMember(memberVO);
 		rdat.addFlashAttribute("msg", "수정");
-		return "redirect:/admin/member/view?user_id="+ memberVO.getUser_id();
+		return "redirect:/admin/member/view?user_id="+ memberVO.getUser_id()+"&page="+pageVO.getPage();
 		}
 	
 	/* 회원관리 > 삭제	 */
 	@RequestMapping(value = "/admin/member/delete", method = RequestMethod.POST)
-	public String memberDelete(@RequestParam("user_id") String user_id,Locale locale,RedirectAttributes rdat) throws Exception {
+	public String memberDelete(@ModelAttribute("pageVO")PageVO pageVO, @RequestParam("user_id") String user_id,Locale locale,RedirectAttributes rdat) throws Exception {
 		memberService.deleteMember(user_id);
 		rdat.addFlashAttribute("msg","삭제");
 		return "redirect:/admin/member/list";

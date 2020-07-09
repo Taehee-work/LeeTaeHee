@@ -58,7 +58,7 @@ body, h1, h2, h3, h4, h5, h6, li, p {
 			</h1>
 			<nav>
 				<ul class="gnb">
-					<li><a href="/sample/">HOME</a></li>
+					<li><a href="/">HOME</a></li>
 					<li><a href="#weare">WE ARE</a></li>
 					<li><a href="#work">WORK</a></li>
 					<li><a href="#blog">BLOG</a></li>

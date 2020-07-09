@@ -49,8 +49,8 @@
 							<div class="col-sm-12">
 								<!-- text input -->
 								<div class="form-group">
-									<label>user_pw</label><input value="${memberVO.user_pw}" name="user_pw" type="text"
-										class="form-control" placeholder="Enter user_pw">
+									<label>user_pw</label><input value="" name="user_pw" type="text"
+										class="form-control" placeholder="${memberVO.user_pw}">
 								</div>
 							</div>
 
@@ -81,15 +81,16 @@
 									<option value="1"<c:out value="${(memberVO.enabled eq 'true')?('selected'):('')}"/>>true</option>
 								</select> 
 								<label>level</label> <select name="levels" class="form-control">
-									<option value="ROLE_USER"<c:out value="${memberVO.levels eq 'ROLE_USER'?'selected':''}"/>>ROLE_USER</option>
 									<option value="ROLE_ADMIN"<c:out value="${memberVO.levels eq 'ROLE_ADMIN'?'seleced':''}"/>>ROLE_ADMIN</option>
+									<option value="ROLE_USER"<c:out value="${memberVO.levels eq 'ROLE_USER'?'selected':''}"/>>ROLE_USER</option>	
 								</select> <br>
 								<div class="buttons">
 									<button type="submit" class="btn btn-warning">Submit</button>
-									<a href="/admin/member/list" class="btn btn-primary">LIST ALL</a>
+									<a href="/admin/member/list?page=${pageVO.page}" class="btn btn-primary">LIST ALL</a>
 								</div>
 							</div>
 						</div>
+						<input type="hidden" name="page" value="${pageVO.page}">
 					</form>
 				</div>
 				<!-- /.content-header -->
