@@ -9,12 +9,10 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
-@Aspect
 @Component
-
+@Aspect
 public class DebugAdvice {
 	private static final Logger logger = LoggerFactory.getLogger(DebugAdvice.class);
-			
 	/*
 	 * ...@Around는 메서드 실행에 직접 관여함.
 	 * ...Around타입의 기능은 파라미터로 ProceedingJoinPoint 타입을 사용함.
@@ -25,7 +23,7 @@ public class DebugAdvice {
 	 * ...@Around를 이용하는 경우 반드시 메서드의 리턴타입은 Object로 선언해야 함.
 	 * ...@Around는 메서드를 직접 호출하고, 결과를 반환해야만 정상적인 처리가 됨. 
 	 */
-	//@Around("execution(* org.edu.service.MemberService*.*(..))")//...495p.주석.트랜잭션.
+	//@Around("execution(* org.edu.service.MemberService*.*(..))")
 	@Around("execution(* org.edu.controller.AdminController.*(..))")
 	public Object timeLog(ProceedingJoinPoint pjp)throws Throwable{
 		    
@@ -41,5 +39,4 @@ public class DebugAdvice {
 	  
 	  return result;
 	}
-	
 }

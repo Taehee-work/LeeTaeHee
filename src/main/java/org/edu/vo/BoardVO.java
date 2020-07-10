@@ -5,18 +5,18 @@ import java.util.Date;
 import org.hibernate.validator.constraints.NotBlank;
 
 public class BoardVO {
-
 	private Integer bno;
-	@NotBlank(message="게시물 제목은 필수 입력사항입니다!")
+	@NotBlank(message="게시물 제목은 필수 입력사항 입니다!")
 	private String title;
-	@NotBlank(message="게시물 내용은 필수 입력사항입니다!")
+	@NotBlank(message="게시물 내용은 필수 입력사항 입니다!")
 	private String content;
 	private String writer;
 	private Date regdate;
-	private Date update_data;
+	private Date update_date;
 	private int view_count;
 	private int reply_count;
-	private String[] files; //첨부파일 용 변수 추가
+	
+	private String[] files;//첨부파일용 변수 추가
 	
 	public Integer getBno() {
 		return bno;
@@ -48,11 +48,11 @@ public class BoardVO {
 	public void setRegdate(Date regdate) {
 		this.regdate = regdate;
 	}
-	public Date getUpdate_data() {
-		return update_data;
+	public Date getUpdate_date() {
+		return update_date;
 	}
-	public void setUpdate_data(Date update_data) {
-		this.update_data = update_data;
+	public void setUpdate_date(Date update_date) {
+		this.update_date = update_date;
 	}
 	public int getView_count() {
 		return view_count;
@@ -67,6 +67,12 @@ public class BoardVO {
 		this.reply_count = reply_count;
 	}
 	
+	@Override
+	public String toString() {
+		return "BoardVO [bno=" + bno + ", title=" + title + ", content=" + content + ", writer=" + writer + ", regdate="
+				+ regdate + ", update_date=" + update_date + ", view_count=" + view_count + ", reply_count="
+				+ reply_count + "]";
+	}
 	public String[] getFiles() {
 		return files;
 	}
@@ -74,11 +80,6 @@ public class BoardVO {
 		this.files = files;
 	}
 	
-	@Override
-	public String toString() {
-		return "BoardVO [bno=" + bno + ", title=" + title + ", content=" + content + ", writer=" + writer
-				+ ", regdate=" + regdate + ", update_data=" + update_data + ", view_count=" + view_count
-				+ ", reply_count=" + reply_count + "]";
-	}
-		
+	
+	
 }
