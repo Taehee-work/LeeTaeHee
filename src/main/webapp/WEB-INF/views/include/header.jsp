@@ -68,10 +68,10 @@
 										<li><a href="/sample/slide">슬라이드</a></li>
 									</ul>
 								</div></li>
-							<li><a href="#" class="openAll2">고객센터</a>
+							<li><a href="/board/list" class="openAll2">고객센터</a>
 								<div class="gnb_depth gnb_depth2_2">
 									<ul class="submenu_list">
-										<li><a href="#">공지사항</a></li>
+										<li><a href="/board/list">공지사항</a></li>
 									</ul>
 								</div></li>
 						</ul>

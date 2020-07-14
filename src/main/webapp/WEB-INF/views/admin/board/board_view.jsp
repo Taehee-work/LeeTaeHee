@@ -85,7 +85,7 @@
 												placeholder="USER ID">
 										</div>
 									</div>
-																		<div class="col-sm-12">
+									<div class="col-sm-12">
 										<!-- text input -->
 										<div class="form-group">
 											<label>FileDownload</label> 
