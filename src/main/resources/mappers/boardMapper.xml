@@ -61,6 +61,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		select * from tbl_board where bno = #{bno}
 	</select>
 	
+	<update id="updateViewCount">
+		update tbl_board set
+		view_count = view_count + 1
+		where bno = #{bno}	
+	</update>
+	
 	<!-- 첨부파일 MySQL용
 	<insert id="insertAttach">
 		insert into tbl_attach(full_name, bno) value(#{fullName}, LAST_INSERT_ID())

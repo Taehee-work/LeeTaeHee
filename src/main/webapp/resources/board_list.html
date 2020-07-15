@@ -134,7 +134,7 @@
 					</div>
 				</div>
 				<div class="col-1" style="display: inline-block">
-					<select class="form-control">
+					<select id="searchType" class="form-control">
 						<option>--</option>
 					</select>
 				</div>
@@ -268,6 +268,28 @@
 	<script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 	<!-- AdminLTE App -->
 	<script src="dist/js/adminlte.min.js"></script>
+	<script>
+	//============고전적인 자바스크립트 방식==============//
+	function myFunc(){//function 함수이름(){}
+		alert('테스트');
+	}
+	myFunc();//함수호출==실행
+	//=========jQuery 스크립트 방식=================//
+	$(document).ready(function(){//함수명 없이 실행 == 콜백함수
+		alert('테스트2');
+		//$("tr").css("background-color","green");//엘리먼트를(=$("*"))선택후 변경
+		//$("tr").css({"background-color":"yellow","color":"blue"});
+		//$(".btn-primary").css({"background-color":"green"});
+		//$("#searchType").css({"width":"150px"});//jQuery 방식
+		//document.getElementById("searchType").style.width="100px";//original Java script
+		//$("table thead tr").css({"background-color":"yellow","color":"blue"});
+		var cnt=131;
+		$(".btn-primary").bind("click",function(event){
+			$("<tr><td>"+cnt+"</td><td>한줄추가</td><td>내용추가</td><td>2020.07.15</td><td>100</td></tr>").prependTo("table");
+			cnt++;
+		});
+	});
+	</script>
 
 </body>
 </html>

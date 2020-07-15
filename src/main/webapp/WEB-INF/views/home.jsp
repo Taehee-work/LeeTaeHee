@@ -94,7 +94,7 @@
 			<ul class="place_list box_inner clear">
 				<c:forEach items="${boardList}" var="boardVO" varStatus="status">
 					<c:if test="${status.count <= 3 }">
-						<li><a href="/board/view?bno=${boardVO.bno}"> <!-- 첨부파일이 있을떄 -->
+						<li><a href="/board/view?bno=${boardVO.bno}&page=1"> <!-- 첨부파일이 있을떄 -->
 								<c:if test="${boardVO.files[0] != null}">
 									<c:set var="extName" value="${fn:split(boardVO.files[0], '.')}" />
 									<c:set var="ext" value="${extName[fn:length(extName)-1]}" />
@@ -137,7 +137,7 @@
 				</h3>
 				<ul class="notice_recent">
 					<c:forEach items="${boardList}" var="boardVO" varStatus="status">
-						<li><a href="/board/view?bno=${boardVO.bno }">${boardVO.title}</a></li>
+						<li><a href="/board/view?bno=${boardVO.bno}&page=1">${boardVO.title}</a></li>
 					</c:forEach>
 				</ul>
 			</div>
