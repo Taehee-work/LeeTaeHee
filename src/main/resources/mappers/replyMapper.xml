@@ -28,7 +28,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		where rno = #{rno}
 	</update>
 	
-	<delete id="replyDelete">
+	<delete id="deleteReply">
 		delete from tbl_reply where rno = #{rno}
 	</delete>
 	

@@ -23,6 +23,41 @@ public class ReplyController {
 	
 	@Inject
 	private IF_ReplyService replyService;
+
+	/**
+	 * 댓글 삭제 서비스
+	 */
+	@RequestMapping(value="/delete/{rno}", method = RequestMethod.DELETE)
+	public ResponseEntity<String> deleteReply(@PathVariable("rno") Integer rno){
+		ResponseEntity<String> entity = null;
+		try {
+			replyService.deleteReply(rno);
+			entity = new ResponseEntity<String>("SUCCESS",HttpStatus.OK);
+		} catch (Exception e) {
+			e.printStackTrace();
+			entity = new ResponseEntity<String>(e.getMessage(), HttpStatus.BAD_REQUEST);
+		}
+		
+		return entity;//JSON데이터를 리턴(jsp페이지로)		
+	}
+		
+	/**
+	 * 댓글 수정 서비스
+	 */
+	@RequestMapping(value="/update/{rno}", method = {RequestMethod.PUT, RequestMethod.PATCH})
+	public ResponseEntity<String> updateReply(@PathVariable("rno") Integer rno,@RequestBody ReplyVO replyVO){
+		ResponseEntity<String> entity = null;
+		try {
+			replyVO.setRno(rno);
+			replyService.updateReply(replyVO);
+			entity = new ResponseEntity<String>("SUCCESS",HttpStatus.OK);
+		} catch (Exception e) {
+			e.printStackTrace();
+			entity = new ResponseEntity<String>(e.getMessage(), HttpStatus.BAD_REQUEST);
+		}
+		
+		return entity;//JSON데이터를 리턴(jsp페이지로)		
+	}
 	
 	/**
 	 * 댓글 입력 서비스
