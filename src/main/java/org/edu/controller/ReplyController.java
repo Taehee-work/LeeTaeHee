@@ -1,8 +1,12 @@
 package org.edu.controller;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+
 import javax.inject.Inject;
 import org.edu.service.IF_ReplyService;
+import org.edu.vo.PageVO;
 import org.edu.vo.ReplyVO;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -79,18 +83,28 @@ public class ReplyController {
 	 * 댓글 리스트 서비스
 	 * @param bno
 	 * @return
+	 * @throws Exception 
 	 */
-	@RequestMapping(value="/select/{bno}", method=RequestMethod.GET)
-	public ResponseEntity<List<ReplyVO>> selectReply(@PathVariable("bno") Integer bno){
-		ResponseEntity<List<ReplyVO>> entity = null;
+	@RequestMapping(value="/select/{bno}/{page}", method=RequestMethod.GET)
+	public ResponseEntity<Map<String,Object>> selectReply(@PathVariable("page") Integer page,@PathVariable("bno") Integer bno) throws Exception {
+		ResponseEntity<Map<String,Object>> entity = null;
+		PageVO pageVO = new PageVO();
+		pageVO.setPage(page);
+		pageVO.setPerPageNum(10);
+		pageVO.setTotalCount(replyService.countRno(bno));
+		//replyVO리스트(댓글 리스트), pageVO클래스(페이지번호  변수)
+		//Map > HashMap
+		Map<String,Object> resultMap = new HashMap<String,Object>();
+		resultMap.put("replyList", replyService.selectReply(bno, pageVO));
+		resultMap.put("pageVO", pageVO);
+		//Map변수=데이터형 [{'key':'List<>'},{'key':'Class'},{'':''},...]
 		try {
-			entity = new ResponseEntity<>(replyService.selectReply(bno),HttpStatus.OK);
+			entity = new ResponseEntity<Map<String,Object>>(resultMap, HttpStatus.OK);
 		} catch (Exception e) {
 			e.printStackTrace();
-			entity = new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+			entity = new ResponseEntity<Map<String,Object>>(HttpStatus.BAD_REQUEST);
 		}
 		return entity;
-		
 	}
 		
 }
