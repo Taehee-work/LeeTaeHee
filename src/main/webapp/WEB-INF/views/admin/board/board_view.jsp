@@ -147,9 +147,15 @@
 											var printPageVO = function(pageVO, target) {
 												var paging = "";
 												//console.log(pageVO);//디버그
+												if(pageVO.prev){
+													paging = paging + '<li class="page-item"><a class="page-link" href="'pageVO.startPage-1+'">이전</a></li>';
+												}
 												for(var cnt=(pageVO.startPage);cnt<=(pageVO.endPage);cnt++){
 													var active = (cnt==pageVO.page)?"active":"";
 													paging = paging + '<li class="page-item '+active+'"><a class="page-link" href="'+cnt+'">'+cnt+'</a></li>';
+												}
+												if(PageVO.next){
+													
 												}
 												target.html(paging);
 											}
