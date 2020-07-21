@@ -111,7 +111,7 @@
 							<div class="timeline">
 								<!-- timeline time label -->
 								<div class="time-label" id="replyDiv">
-									<span class="bg-green">Replies List[1]</span>
+									<span class="bg-green">Replies List[<span id="countRno"></span>]</span>
 								</div>
 								<!-- /.timeline-label -->
 								<!-- timeline item -->
@@ -188,12 +188,15 @@ function getPage(pageInfo) {
 		//alert(pageInfo);//디버그
 		printReplyList(data.replyList, $("#replyDiv"), $("#template"));
 		printPageVO(data.pageVO, $(".pagination"));
+		//pageVO.totalCount 변수 출력(아래)
+		$("#countRno").text(data.pageVO.totalCount);
 		$("#modifyModal").modal('hide');//수정,삭제 후 모달창 없애기
 	});
 }
 //여기까지는 변수+함수 정의하고, 실제 사용은 아래부터 실행
 //댓글 리스트 출력실행
 $(document).ready(function(){
+	//최초 페이지 로딩시 아래 명령 실행(아래)
 	getPage("/reply/select/" + bno + "/" + page);
 	//페이징번호 클릭시 페이지 이동이 아니고, getPage함수 실행이 되면 OK.
 	$(".pagination").on("click","li a",function(event){
@@ -209,6 +212,11 @@ $(document).ready(function(){
 	$("#insertApplyBtn").on("click",function(){
 		var replyer = $("#replyerInput").val();
 		var replytext = $("#replytextInput").val();
+		//입력값 유효성 검사 = validation 처리(아래)
+		if(replyer==""||replytext==""){
+			alert("작성자와 댓글내용은 필수 입력 값입니다.");
+			return false;
+		}
 		$.ajax({
 			type:'post',
 			url:'/reply/insert',

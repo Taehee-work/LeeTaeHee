@@ -90,7 +90,7 @@ public class ReplyController {
 		ResponseEntity<Map<String,Object>> entity = null;
 		PageVO pageVO = new PageVO();
 		pageVO.setPage(page);
-		pageVO.setPerPageNum(10);
+		pageVO.setPerPageNum(5);
 		pageVO.setTotalCount(replyService.countRno(bno));
 		//replyVO리스트(댓글 리스트), pageVO클래스(페이지번호  변수)
 		//Map > HashMap
