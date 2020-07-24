@@ -23,15 +23,15 @@ public class DataSourceTest {
 	@Inject
 	private IF_MemberService memberService;
 	
-	/*	@Inject
-	private DataSource ds;*/
+		@Inject
+	private DataSource ds;
 	
-/*	@Test
+	@Test
 	public void testConnection() throws Exception {
 		Connection con = ds.getConnection();
 		System.out.println("데이터베이스 커넥션 성공 : " + con);
 	}
-	*/
+	
 	
 	@Test
 	public void testInsertMember() throws Exception{

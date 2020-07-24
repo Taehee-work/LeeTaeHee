@@ -38,7 +38,7 @@
 						<th scope="col">작성일</th>
 					</tr>
 				</thead>
-				<tbody>
+				<tbody><!-- 번호,제목,조회수,작성일(출력방식변경) 출력 -->
 					<c:forEach items="${boardList}" var="boardVO" varStatus="status">
 						<tr>
 							<td>${boardVO.bno}</td>
@@ -51,7 +51,7 @@
 					</c:forEach>
 				</tbody>
 			</table>
-			<!-- pagination -->
+			<!-- pagination 부분-->
 			<div class="pagination">
 				<c:if test="${pageVO.prev}">
 					<a href="/board/list?page=${pageVO.startPage-1}&searchType=${pageVO.searchType}&searchKeyword=${pageVO.searchKeyword}" class="prevpage pbtn">

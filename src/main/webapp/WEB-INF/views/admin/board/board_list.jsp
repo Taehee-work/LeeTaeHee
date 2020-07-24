@@ -93,6 +93,7 @@
 					</td>
 					<td>
 						<nav aria-label="Contacts Page Navigation">
+							<!-- 페이징 부분 시작 -->
 							<ul class="pagination" style="position: relative; left: 40%;">
 								<c:if test="${pageVO.prev}">
 									<li class="page-item"><a class="page-link"

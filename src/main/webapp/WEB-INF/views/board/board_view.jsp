@@ -35,7 +35,7 @@
 				</div>
 			</li>
 			<c:if test="${boardVO.files[0] != null}">
-				<li class="bbs_content">
+				<li class="bbs_content"><!-- 첨부파일이 있을때 파일명출력 및 내려받기 -->
 					<a href="/download?filename=${boardVO.files[0]}">첨부파일: ${boardVO.files[0]} 다운로드</a>
 					<br>
 					<c:set var="extName" value="${fn:split(boardVO.files[0], '.')}"/>
@@ -61,7 +61,7 @@
 <form id="deleteForm">
 	<input name="bno" id="bno" type="hidden" value="${boardVO.bno}">
 </form>
-<script>
+<script>//삭제 팝업창 부분
 $(document).ready(function(){
 	$("#deleteBno").bind("click",function(){
 		if(confirm("정말 삭제 하시겠습니까?")){
@@ -71,7 +71,7 @@ $(document).ready(function(){
 			//alert($("#bno").val());//디버그용
 			formObj.submit();	
 		}else{
-			return false;	
+			return false;
 		}
 		
 	})

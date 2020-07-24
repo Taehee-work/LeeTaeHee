@@ -54,7 +54,7 @@ body, h1, h2, h3, h4, h5, h6, li, p {
 	<div id="wrap">
 		<header class="header cfixed">
 			<h1 class="logo">
-				<a href=""><img src="/resources/images/logo_02.png" alt=""></a>
+				<a href="/"><img src="/resources/images/logo_02.png" alt=""></a>
 			</h1>
 			<nav>
 				<ul class="gnb">

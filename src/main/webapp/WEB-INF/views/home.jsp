@@ -5,6 +5,14 @@
 <%@ include file="include/header.jsp"%>
 
 <!-- Content Wrapper. Contains page content -->
+<!-- 출력이미지크기 고정 -->
+<style>
+.roll_content img{
+	height:550px !important;
+	width:100% !important;
+}
+</style>
+
 <div id="container">
 
 	<div class="main_rolling_pc">
@@ -15,7 +23,7 @@
 						<a href="/resources/home/javascript:;"> <img
 							src="/resources/home/img/img_slidecontents01.png"
 							alt="OOOO OOOOO OOOO OOOOO, 스프링... OOOO OOOOO?"></a>
-						<p class="roll_txtline">OOOO OOOOOOOOO OOOOOOOOO OOOOO</p>
+						<p class="roll_txtline">이미지 출처: https://pixabay.com/ko</p>
 					</div>
 				</li>
 				<li class="imglist1">
@@ -23,7 +31,7 @@
 						<a href="/resources/home/javascript:;"> <img
 							src="/resources/home/img/img_slidecontents02.png"
 							alt="OOOO OOOOOOOOO OOOOO 스프링정보, 스프링... OOOO OOOOO?"></a>
-						<p class="roll_txtline">OOOO OOOOOOOOO OOOOOOOOO OOOOO</p>
+						<p class="roll_txtline">이미지 출처: https://pixabay.com/ko</p>
 					</div>
 				</li>
 				<li class="imglist2">
@@ -31,7 +39,7 @@
 						<a href="/resources/home/javascript:;"> <img
 							src="/resources/home/img/img_slidecontents03.png"
 							alt="OOOO OOOOO 믿을 수 있는 스프링정보, 스프링... OOOO OOOOO?"></a>
-						<p class="roll_txtline">OOOO OOOOOOOOO OOOOOOOOO OOOOO</p>
+						<p class="roll_txtline">이미지 출처: https://pixabay.com/ko</p>
 					</div>
 				</li>
 			</ul>
@@ -88,7 +96,7 @@
 	<!-- about_area -->
 	<div class="about_area">
 		<h2>
-			OOOO OOOOO 스프링 <b>TOP 3</b>
+			인기 게시물 <b>TOP 3</b>
 		</h2>
 		<div class="about_box">
 			<ul class="place_list box_inner clear">
